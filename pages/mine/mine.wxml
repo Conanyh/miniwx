@@ -7,7 +7,8 @@
     <view class="userinfo-content">
       <!-- 用户头像 -->
       <view class="userinfo-photo">
-        <image src="{{userInfo.avatarUrl}}" mode='widthFix'></image>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <!-- <image wx:if="{{hasUserInfo && canIUse}}" src="{{userInfo.avatarUrl}}" mode='widthFix'></image> -->
       </view>
       <!-- 用户名称 -->
       <text class="user" wx:if="{{token != ''}}">已登录</text>
@@ -37,9 +38,9 @@
       </view>
     </view>
   </view> -->
-  
+
   <view class='mine'>
-  <!-- 我的积分 -->
+    <!-- 我的积分 -->
     <view class='mine-each' bindtap='jumpComments'>
       <view class='mineeach-left'>
         <view class='left-img'>
@@ -98,4 +99,3 @@
     </view>
   </view>
 </view>
-

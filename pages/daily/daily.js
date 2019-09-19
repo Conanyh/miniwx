@@ -5,14 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dailyList: [
-      {
-        'id': 1,
-        'title': '日志',
-        'summary': '日志',
-        'posted_at': '2019-09-10'
-      }
-    ],
+    dailyList: [],
     isLoadingMore: false,
     currentPage: 1,
     info: ''
