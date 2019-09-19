@@ -1,0 +1,40 @@
+<!-- 搜索 -->
+<form bindsubmit='searchs'>
+  <view class="searchtime">
+    <view class='search-item' style='margin-right: 20rpx;margin-left:5px;'>
+      <picker mode="date" value="{{date}}" start="2019-01-01" end="2100-01-01" bindchange="bindDateChange1">
+        <input class="weui-input" placeholder='请输入开始时间' value="{{date}}" style='text-align:center;' name='starttime' disabled='true'></input>
+      </picker>
+    </view>
+    <view class='search-item' style='margin-right: 20rpx;'>
+      <picker mode="date" value="{{date1}}" start="2019-01-01" end="2100-01-01" bindchange="bindDateChange2">
+        <input class="weui-input" placeholder='请输入截止时间' value="{{date1}}" style='text-align:center;' name='endtime' disabled='true'></input>
+      </picker>
+    </view>
+    <button form-type="submit" class='btn'>搜索</button>
+  </view>
+</form>
+
+<!-- 主体 -->
+<view class="weui-tab" style='margin-top:30px;'>
+  <view class="weui-navbar">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view class="weui-tab__panel">
+    <!-- 折线图 -->
+    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+      <canvas canvas-id="lineCanvas" disable-scroll="true" bindtouchstart="touchHandler2" style="width: {{canvaswidth}}px; height: 200px;"></canvas>
+    </view>
+    <!-- 柱状图 -->
+    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+      <view>
+        <canvas canvas-id="columnCanvas" style="width: {{canvaswidth}}px; height: 200px;"></canvas>
+      </view>
+    </view>
+  </view>
+</view>

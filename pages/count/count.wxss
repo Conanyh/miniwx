@@ -1,0 +1,43 @@
+.weui-tab__content {
+  padding-top: 60px;
+  text-align: center;
+}
+.title {
+	text-align: center;
+	position: relative;
+	margin-top: 30rpx;
+	margin-bottom: 40rpx;
+   font-size: 16px;
+  color: #515151;
+}
+.back-btn {
+	position: absolute;
+  font-size: 15px;
+  color: #333;
+	left: 30rpx;
+	top: -50px;
+}
+
+/* 搜索 */
+.searchtime{
+  margin-top: 10px;
+  display: flex;
+  font-size: 14px;
+  color: #616161;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search-item{
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  flex:1;
+}
+.btn{
+  height: 38px;
+  line-height: 38px;
+  font-size: 14px;
+  background-color: #fafafa;
+  margin-right: 5px;
+  color: #616161;
+}

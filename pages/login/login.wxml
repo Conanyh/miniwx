@@ -1,0 +1,48 @@
+ <view class="userinfo">
+    <button style='border-radius: 5px;margin-top:10px;color:#515151;' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      获取头像昵称
+    </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-nickname">{{userInfo.openId}}</text>
+    </block>
+  </view>
+
+<view class='loginContainer'>
+  <view class='setList'>
+    <view class="weui-cells__title">用户绑定</view>
+    <form bindsubmit='bindUser' bindreset='bindUserReset'>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view>
+            <image src='../../images/shouji.png' class='binduserImg'></image>
+          </view>
+        </view>
+        <view class="weui-cell__bd" style='margin-left:18px;'>
+          <input class="weui-input" name="telphone" placeholder='请输入手机号码' style="font-weight:500;" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view>
+            <image src='../../images/suo.png' class='binduserImg'></image>
+          </view>
+        </view>
+        <view class="weui-cell__bd" style='margin-left:18px;'>
+          <input type='password' class="weui-input" name="password" placeholder='请输入登录密码' style="font-weight:500;" />
+        </view>
+      </view>
+
+      <view class="add_cancle_device">
+        <button class="addDevice-btn1" form-type="submit" plain="true">
+          <text style='color:#fff'>绑定</text>
+        </button>
+        <button class="addDevice-btn2" form-type="reset" plain="true">
+          <text style='color:#333'>取消</text>
+        </button>
+      </view>
+      
+    </form>
+  </view>
+</view>

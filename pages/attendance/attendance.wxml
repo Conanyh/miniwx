@@ -1,0 +1,63 @@
+<!-- 管理员 -->
+<view class="weui-panel weui-panel_access" wx:if="{{chactors=='company_manage'}}">
+  <block wx:for="{{personList}}" wx:for-item="item" wx:key="key">
+    <view class="weui-media-box weui-media-box_appmsg">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="{{item.image}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title" style='color:#515151;;margin-bottom: 10rpx;font-size:16px;'>{{item.name}}</view>
+        <view class="weui-media-box__desc">
+          <view>
+            <block wx:if="{{item.late_count>0}}">
+              <view style='display:inline-block;margin-bottom:4px;letter-spacing: 2px;margin-right:10px;'>缺勤{{item.late_count}}次</view>
+            </block>
+            <block wx:else>
+               <view style='display:inline-block;margin-bottom:4px;letter-spacing: 2px;margin-right:10px;'>缺勤0次</view>
+            </block>
+            |
+            <view style='display:inline-block;margin-bottom:4px;letter-spacing: 2px;margin-left:10px;'>准时出勤{{item.on_time_count}}次</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 员工 -->
+<view wx:else>
+  <view class="weui-media-box weui-media-box_appmsg">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+      <image class="weui-media-box__thumb" src="{{image}}" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+      <view class="weui-media-box__title" style='color:#515151;;margin-bottom: 10rpx;font-size:16px;'>{{name}}</view>
+      <view class="weui-media-box__desc">
+        <view>
+          <view style='display:inline-block;margin-bottom:4px;letter-spacing: 2px;margin-right:10px;'>缺勤{{late_count}}次</view>
+          |
+          <view style='display:inline-block;margin-bottom:4px;letter-spacing: 2px;margin-left:10px;'>准时出勤{{on_time_count}}次</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="weui-panel__hd">打卡时间表</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view wx:if="{{records.length>0}}">
+        <block wx:for="{{records}}" wx:for-item="item" wx:key="key">
+          <view wx:if="{{item.time!=null}}">
+            <view class="weui-cell weui-cell_access">
+              <image src="../../images/queqin.png" style="margin-right: 5px;vertical-align: middle;width:30px; height: 30px;"></image>
+              <view class="weui-cell__bd" style='color:#707070;font-size:16px;'>{{item.time}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view wx:else>
+        <view style="font-size:16px;color:#515151;font-weight:500;text-align:center;">暂无打卡记录</view>
+      </view>
+
+    </view>
+  </view>
+</view>

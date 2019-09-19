@@ -1,0 +1,60 @@
+<!-- 登录成功 -->
+<view class="personalWrap" wx:if="{{type!=''}}">
+  <view class="personalMe">
+    <view class="userinfo-avatar">
+      <open-data type="userAvatarUrl" style="width:75px;height:75px;border:1px solid #ddd;float:left;margin:10px 15px;border-radius: 50%;overflow: hidden;"></open-data>
+    </view>
+
+    <view class="personalInfo">
+      <block wx:if="{{type=='company_manage'}}">
+        <view><text>姓名: {{username}}</text></view>
+        <view><text>类别: 管理员</text></view>
+      </block>
+      <block wx:else>
+        <view><text>姓名: {{username}}</text></view>
+        <view><text>部门: {{departname}}</text></view>
+        <view><text>工号: {{jobno}}</text></view>
+        <view><text>号码: {{telphone}} </text></view>
+      </block>
+    </view>
+  </view>
+
+  <view class="personalList">
+    <view class="bbh">
+      <image src='../../images/bbh-icon.png' class='img-bbh'></image>
+      版本号
+      <text style='display:inline-block;float:right;margin-right:20px;color:#515151'>{{bbh}}</text>
+    </view>
+    <view class="xgmm" hover-class='pass' catchtap='resetPass'>
+      <image src='../../images/xgmm-icon.png' class='img-bbh1'></image>
+      修改密码
+    </view>
+    <view class="xgmm" hover-class='pass' catchtap='logout'>
+      <image src='../../images/logout.png' class='img-bbh1'></image>
+      退出登录
+    </view>
+  </view>
+</view>
+
+<!-- 没有登录 -->
+<view class="personalWrap" wx:else>
+  <view class="personalMe">
+    <image src="../../images/login-icon.png" style="width:68px;height:68px;border:1px solid #ddd;float:left;margin:20rpx 20rpx;border-radius: 50%;"></image>
+    <view class="personalInfo">
+      <view>未登录 ？
+        <text style='display:inline;text-decoration: underline;color:#42a63e' bindtap="defaultLogin">点击登录</text>
+      </view>
+      <text>暂无信息</text>
+    </view>
+  </view>
+
+  <view class="personalList">
+    <view class="bbh">
+      <image src='../../images/bbh-icon.png' class='img-bbh'></image>
+      版本号
+      <text style='display:inline-block;float:right;margin-right:20px;color:#515151'>{{bbh}}</text>
+    </view>
+   
+  </view>
+
+</view>

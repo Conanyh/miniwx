@@ -1,0 +1,31 @@
+<view class="search">
+  <view wx:if="{{start_date||end_date}}">
+    <view class='searchtitle'>{{start_date}}~{{end_date}} 考勤情况表</view>
+  </view>
+  <view wx:else>
+    <view class='searchtitle'>{{searchtime}} 考勤情况表</view>
+  </view>
+
+  <view class="table">
+    <view class="tr">
+      <view class="th">姓名</view>
+      <view class="th">缺勤次数</view>
+      <view class="th">出勤次数</view>
+    </view>
+    <block wx:for="{{data}}" wx:for-item="item" wx:key="key">
+      <view class="tr">
+        <view class="td">{{item.name}}</view>
+
+        <block wx:if="{{item.late_count>0}}">
+           <view class="td">{{item.late_count}}</view>
+        </block>
+        <block wx:else>
+           <view class="td">0</view>
+        </block>
+
+        <view class="td">{{item.on_time_count}}</view>
+      </view>
+    </block>
+
+  </view>
+</view>

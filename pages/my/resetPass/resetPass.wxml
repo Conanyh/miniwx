@@ -1,0 +1,42 @@
+<form bindsubmit='resetpassword'>
+  <view class='weui-cells__title'>修改密码</view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view>
+        <image src='../../../images/shouji.png' class='binduserImg'></image>
+      </view>
+    </view>
+    <view class="weui-cell__bd" style='margin-left:18px;'>
+      <input class="weui-input" name="phone" placeholder='请输入手机号码' style="font-weight:500;" />
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view>
+        <image src='../../../images/suo.png' class='binduserImg'></image>
+      </view>
+    </view>
+    <view class="weui-cell__bd" style='margin-left:18px;'>
+      <input type='password' class="weui-input" name="password" placeholder='请输入原密码' style="font-weight:500;" />
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view>
+        <image src='../../../images/suo.png' class='binduserImg'></image>
+      </view>
+    </view>
+    <view class="weui-cell__bd" style='margin-left:18px;'>
+      <input type='password' class="weui-input" name="confirmpass" placeholder='请输入新密码' style="font-weight:500;" />
+    </view>
+  </view>
+
+  <view class="add_cancle_device">
+    <button class="addDevice-btn1" form-type="submit" plain="true">
+      <text style='color:#fff'>确定</text>
+    </button>
+    <button class="addDevice-btn2" form-type="reset" plain="true">
+      <text style='color:#333'>取消</text>
+    </button>
+  </view>
+</form>

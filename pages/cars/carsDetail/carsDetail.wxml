@@ -1,0 +1,19 @@
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd">车辆进出时间列表</view>
+  <view class="weui-panel__bd">
+
+    <block wx:for="{{timedata}}" wx:key="key">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__desc">
+          <text class='carin'>进场时间</text>
+          <text class='carout'>2019-05-26 10:11:30</text>
+        </view>
+        <view class="weui-media-box__desc">
+          <text class='carin'>出场时间</text>
+          <text class='carout'>2019-05-26 13:11:30</text>
+        </view>
+      </view>
+    </block>
+    
+  </view>
+</view>

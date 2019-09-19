@@ -1,0 +1,86 @@
+<view class="indexContainer">
+  <!-- 轮播图 -->
+  <view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}" indicator-color="{{indicatorColor}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="logo" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 主体布局 -->
+  <view class='index-container'>
+
+    <view class='index-main-item' catchtap="tongji" hover-class='indextapstyle' wx:if="{{count}}">
+      <view class="index-main-item-child">
+        <view class='index-main-item-img'>
+          <image src='../../images/tj.png' class="icon-style"></image>
+        </view>
+        <view class="indexfont">
+          <text>考勤统计</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='index-main-item' catchtap="persons" hover-class='indextapstyle' wx:if="{{persons}}">
+      <view class="index-main-item-child">
+        <view class='index-main-item-img'>
+          <image src='../../images/kh.png' class="icon-style"></image>
+        </view>
+        <view class="indexfont">
+          <text>人员信息</text>
+        </view>
+      </view>
+    </view>
+
+    <block wx:if="{{chactors=='company_manage'}}">
+      <view class='index-main-item' catchtap="attendance" hover-class='indextapstyle' wx:if="{{attendance}}">
+        <view class="index-main-item-child">
+          <view class='index-main-item-img'>
+            <image src='../../images/kq.png' class="icon-style"></image>
+          </view>
+          <view class="indexfont">
+            <text>考勤信息</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='index-main-item' catchtap="attendance" hover-class='indextapstyle' wx:if="{{attendance}}">
+        <view class="index-main-item-child">
+          <view class='index-main-item-img'>
+            <image src='../../images/kq.png' class="icon-style"></image>
+          </view>
+          <view class="indexfont">
+            <text>个人考勤</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+
+    <view class='index-main-item' catchtap="cars" hover-class='indextapstyle' wx:if="{{cars}}">
+      <view class="index-main-item-child">
+        <view class='index-main-item-img'>
+          <image src='../../images/cars.png' class="icon-style"></image>
+        </view>
+        <view class="indexfont">
+          <text>车辆信息</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='index-main-item' catchtap="bindUser" hover-class='indextapstyle' wx:if="{{login}}">
+      <view class="index-main-item-child">
+        <view class='index-main-item-img'>
+          <image src='../../images/login.png' class="icon-style"></image>
+        </view>
+        <view class="indexfont">
+          <text>用户绑定</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

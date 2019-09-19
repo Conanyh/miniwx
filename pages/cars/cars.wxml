@@ -1,0 +1,44 @@
+<view class="weui-panel weui-panel_access">
+  <!-- <block>
+    <view class="weui-media-box weui-media-box_appmsg" catchtap='carsDetail' data-index='0'>
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="../../images/face01.png" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view style='color:#515151;margin-bottom: 10rpx;font-size:15px;'>
+          <text style='display:inline-block;float:left;margin-right:10px;'>姓名：张小三</text>
+          <text style='display:inline-block;float:right;width:55%;'>车牌号：京A·123456</text>
+          <view style='clear:both;'></view>
+        </view>
+        <view style='color:#515151;margin-bottom: 10rpx;font-size:15px;'>
+          <text style='display:inline-block;float:left;margin-right:10px;'>车辆类别：货车</text>
+          <text style='display:inline-block;float:right;width:55%;'>颜色：红色</text>
+          <view style='clear:both;'></view>
+        </view>
+        <view style='color:#515151;margin-bottom: 10rpx;font-size:15px;'>
+          <text style='display:inline-block;float:left;margin-right:10px;'>进场次数：20</text>
+          <text style='display:inline-block;float:right;width:55%;'>出场次数：20</text>
+          <view style='clear:both;'></view>
+        </view>
+      </view>
+    </view>
+  </block> -->
+
+  <block wx:for="{{carList}}" wx:key="{{index}}">
+    <view class="weui-media-box weui-media-box_appmsg" catchtap='carsDetail' data-index='0'>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view style='color:#515151;margin-bottom: 10rpx;font-size:15px;'>
+          <text style='display:inline-block;float:left;width:50%;'>车牌号：{{item.license}}</text>
+          <text style='display:inline-block;float:right;width:50%;'>车牌颜色：{{item.colorType}}</text>
+          <view style='clear:both;'></view>
+        </view>
+        <view style='color:#515151;margin-bottom: 10rpx;font-size:15px;'>
+          <text style='display:inline-block;float:left;width:50%;'>车辆类别：{{item.type}}</text>
+          <text style='display:inline-block;float:right;width:50%;'>车身颜色：{{item.carColor}}</text>
+          <view style='clear:both;'></view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+</view>

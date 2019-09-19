@@ -1,0 +1,62 @@
+.personalMe {
+  height: 230rpx;
+  background-color: #f8f8f8;
+  position: relative;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.personalInfo {
+  color: #515151;
+  margin: 20rpx 0rpx 0rpx 20rpx;
+  vertical-align: middle;
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.personalList {
+  background-color: #fff;
+  padding: 13px 13px 15px 13px;
+}
+
+.personalList view {
+  display: block;
+  line-height: 70rpx;
+  height: 70rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.bbh {
+  padding-bottom: 10px;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.img-bbh1 {
+  width: 23px;
+  height: 23px;
+  vertical-align: middle;
+  margin-left: -13px;
+}
+
+.img-bbh {
+  width: 23px;
+  height: 23px;
+  vertical-align: middle;
+}
+
+.xgmm {
+  padding: 12px 0px 10px 12px;
+}
+
+.pass {
+  background-color: rgba(135, 207, 235, 0.1);
+  border-radius: 5px;
+}

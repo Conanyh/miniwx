@@ -1,0 +1,122 @@
+.weui-cell{
+  width: 70%;
+  margin: 0 auto;
+}
+.weui-cells_after-title{
+    font-weight: 700;
+}
+.weui-cells__title {
+  padding: 23rpx 0;
+  font-size: 19px;
+  text-align: center;
+  font-weight: 700;
+   color: #137B3A;
+}
+
+.spliceWorld {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.weui-label {
+  width: 105px;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 16px;
+  color: #ccc;
+}
+.weui-cell{
+  font-size: 16px;
+  color: #666;
+  padding-top: 18rpx;
+  padding-bottom: 18rpx;
+}
+
+.addDevice-btn1, .addDevice-btn2 {
+  width: 55%;
+  border-radius: 15px;
+  margin: 12px auto;
+  padding: 3px;
+  font-size: 17px;
+  font-weight: 500;
+}
+.weui-input{
+  color: #515151;
+  font-size: 16px;
+}
+
+.addDevice-btn1 {
+  background-color: #137B3A !important;
+  border: 1px solid #fff !important;
+  box-sizing: border-box;
+}
+.addDevice-btn1:hover{
+  border: 1px solid #515151 !important;
+}
+.addDevice-btn2:hover{
+  border: 1px solid #515151 !important;
+}
+.addDevice-btn2 {
+  background-color: #f1f1f1 !important;
+  border: 1px solid #fff !important;
+  box-sizing: border-box;
+}
+
+.add_cancle_device {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:18px;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  font-size: 16px;
+  color: #aaa;
+}
+
+.weui-cell:before {
+  border-top: 1px solid #666;
+}
+.weui-cells:after {
+  bottom: 1px;
+  border-bottom: 1px solid #666;
+}
+.weui-cells:before {
+  border-top: 1rpx solid #666;
+}
+
+.weui-cells:after, .weui-cells:before {
+  color: #666;
+}
+.binduserImg{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.weui-cell:before {
+  border-top:none;
+}
+.weui-input:hover{
+  border-bottom: 2px solid #137B3A;
+} 
+.weui-input{
+  border-bottom: 1px solid #2c2c38;
+}
+.weui-cell_active{
+  background-color:f1f1f1;
+}
