@@ -1,0 +1,56 @@
+.personalMe {
+  height: 230rpx;
+  margin: 0rpx 0rpx 30rpx 0rpx;
+  background-color: rgba(232, 238, 240, 0.1);
+  position: relative;
+}
+
+.personalInfo text{
+  position: absolute;
+  top: 45px;
+}
+
+.personalList {
+  background-color: #fff;
+  padding: 13px 13px 15px 13px;
+}
+
+.personalList view {
+  display: block;
+  line-height: 70rpx;
+  height: 70rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.bbh {
+  padding-bottom: 10px;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.img-bbh1 {
+  width: 23px;
+  height: 23px;
+  vertical-align: middle;
+  margin-left: -13px;
+}
+
+.img-bbh {
+  width: 23px;
+  height: 23px;
+  vertical-align: middle;
+}
+
+.xgmm {
+  padding: 12px 0px 10px 12px;
+}
+
+.pass {
+  background-color: rgba(135, 207, 235, 0.1);
+  border-radius: 5px;
+}

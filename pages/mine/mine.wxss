@@ -1,0 +1,390 @@
+/* pages/mine/mine.wxss */
+/* 页面 */
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background: #EEEEEE;
+}
+
+  /* 分割线 */
+.line{
+  width:100vw;
+  height:1px;
+  background:#EEEEEE;
+}
+
+
+  /* 用户部分 */
+.userinfo{
+  width:100vw;
+  height: 80px;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  border-bottom: 1px solid #EEEEEE;
+}
+/* 用户头像信息 */
+.userinfo-content{
+  width:50%;
+  height: 100%;
+  margin-left:5vw;
+  display: flex;
+  align-items: center;
+}
+/* 用户名 */
+.user{
+  font-size:29rpx;
+}
+.user-sq{
+  font-size: 32rpx
+}
+.user-sq::after{
+border:none;
+}
+/* 用户头像 */
+.userinfo-photo{
+  width:50px;
+  height:50px;
+  border-radius:50%; 
+  margin-right: 10px;
+  background: pink;
+}
+/* 用户头像大小 */
+.userinfo-photo image{
+  width:100%;
+  height:100%;
+  border-radius:50%; 
+}
+
+
+  /* 我的订单 */
+.shop{
+  width: 100vw;
+  height:85px;
+  background: #fff;
+  border-bottom:9px solid #EEEEEE;
+}
+.myshop{
+  width:90vw;
+  margin: 10px auto 0;
+  padding: 3vw;
+  display: flex;
+  justify-content: space-between;
+}
+/* 订单文字 */
+.buy{
+  font-size: 14px;
+  font-family: PingFangSC-regular;
+  color: #101010;
+}
+/* 查看全部文字 */
+.all{
+  font-size:3vw;
+  font-family:PingFangSC-regular;
+  font-weight: normal;
+  color:#bbbbbb;
+}
+/* 服务 */
+.service{
+  width: 96vw;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+/* 服务介绍 */
+.myservice{
+  text-align: center;
+}
+/* 服务图片 */
+.myservice image{
+  width:28px;
+  height:25px;
+  display: block;
+  margin-left:1vw;
+}
+.myservice image:last-child{
+  margin:0;
+}
+.myservice text{
+  font-size:12px;
+  color:#666666;
+  font-weight: normal;
+}
+/* 我的及售后部份 */
+.mine{
+  width:100vw;
+  background: #fff;
+}
+/* 我的内容部分 */
+.content{
+  width:100vw;
+  height:40px;
+  display: flex;
+  align-items: center;
+}
+/* 内容图片区域 */
+.content .pic{
+  width:20vw;
+  text-align: center;
+}
+/* 内容图片 */
+.content image{
+  width:20px;
+  height:20px;
+}
+/* 内容文字 */
+.content text{
+  font-size:14px;
+  color: #333333;
+}
+/* 内容的最后文字设置 */
+.content text:last-child{
+  font-size:12px;
+  color:#bbbbbb;
+}
+
+  /* 服务分类 */
+.gift{
+  width:80vw;
+  padding:2vw 5vw 3vw 0;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mine-each{
+  width: 94%;
+  margin-left: 3%;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: #666666
+}
+.mineeach-left{
+  display: flex;
+  justify-content: flex-start
+}
+.left-img{
+  width: 120rpx;
+  text-align: center
+}
+.left-img image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 20rpx
+}
+.right-img image{
+  width: 40rpx;
+  margin-top: 25rpx;
+}
+
+
+
+/* 红包 */
+.envelope{
+  display: block
+}
+.envelopenone{
+  display: none
+}
+.envelope-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  display: block;
+}
+.envelopehb{
+  position: fixed;
+  top: 10%;
+  width: 80%;
+  left: 10%;
+  z-index: 101
+}
+.envelopehb-cont{
+  width: 100%
+}
+.envelopehb-open{
+  width: 30%;
+  position: absolute;
+  bottom: 24%;
+  left: 35%;
+  display: block;
+}
+.envelopehb-close{
+   width: 30%;
+  position: absolute;
+  bottom: 24%;
+  left: 35%;
+  transform:rotateY(1200deg);
+  -ms-transform:rotateY(1200deg); /* IE 9 */
+  -webkit-transform:rotateY(1200deg); /* Safari and Chrome */
+  transition: all 2s linear
+}
+.envelopehb-info{
+  position: absolute;
+  top: 6%;
+  width: 100%;
+  text-align: center;
+  color: #f5f5f5;
+}
+.envelopehb-info .info-img image{
+  width: 100rpx;
+  height: 100rpx
+}
+.envelopehb-info .info-title{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx
+}
+.envelopehb-info .info-num{
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 34rpx
+}
+.envelopehb-info .info-icon{
+  font-size: 40rpx;
+  color: #ffd1ae;
+  display: block;
+}
+.envelopehb-info .info-monry{
+  font-size: 50rpx;
+  color: #ffd1ae;
+}
+.envelopehb-info .info-monry .cont{
+  font-size: 32rpx;
+  color: #f5f5f5
+}
+.envelopehb-angin{
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+  text-align: center;
+  color: #ffd1ae;
+  font-size: 32rpx;
+}
+
+
+/* 抽奖 */
+.luckydraw{
+  display: none
+}
+.cjactive{
+  display: block
+}
+.luckydraw-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  display: block; 
+}
+.luckydrawcj{
+  position: fixed;
+  top: 20%;
+  width: 80%;
+  left: 10%;
+  z-index: 101
+}
+.luckydrawcj-cont{
+  width: 100%
+}
+.luckydrawcj-num{
+  position: absolute;
+  bottom: 22%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333
+}
+.luckydrawcj-btn{
+  width: 36%;
+  height: 60rpx;
+  line-height: 60rpx;
+  left: 32%;
+  position: absolute;
+  bottom: 6%;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 30rpx;
+  opacity: 0
+}
+
+/* 弹框 */
+.drawbox{
+  display: block
+}
+.drawboxnone{
+  display: none
+}
+.envelope-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  display: block;
+}
+.drawcheck{
+  background-color: #fff;
+  border-radius: 10rpx;
+  position: fixed;
+  top: 25%;
+  width: 70%;
+  margin-left: 15%;
+  z-index: 110;
+  font-size: 32rpx;
+  color: #666
+}
+.drawchecktitle{
+  height: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
+  color: #333333
+}
+.drawcheckcont{
+  width: 70%;
+  margin-left: 15%;
+  height: 200rpx;
+  line-height: 45rpx
+}
+.drawcheckbtn{
+  color: #333333;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-top: 1px solid #eee
+}
+
+.drawcheckbtnok{
+   height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-top: 1px solid #eee;
+  display: flex
+}
+.drawcheckbtnok view{
+  width: 50%;
+}
+.drawcheckbtnok view:nth-child(2){
+  background-color: #FE5A5F;
+  color: #fff;
+  border-bottom-right-radius: 10rpx
+}
+

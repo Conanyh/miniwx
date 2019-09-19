@@ -1,0 +1,32 @@
+<!--pages/user/user.wxml-->
+
+<view class="personalWrap" wx:if="{{token}}">
+  <view class="personalMe">
+    <view class='userinfo-avatar'>
+      <open-data type="userAvatarUrl" style="width:68px;height:68px;border:1px solid #ddd;float:left;margin:20rpx 10rpx;border-radius: 50%;overflow: hidden;"></open-data>
+    </view>
+    <view class='personalInfo'>
+      <view>
+        <text>{{name}}</text>
+      </view>
+      <view wx:if="{{role ==1}}">
+        <text>管理员</text>
+      </view>
+      <view wx:else>
+        <text>住户</text>
+      </view>
+      <view>
+        <!-- <button class="button" size="20" >退出登录</button> -->
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="personalWrap" wx:else>
+  <view class="personalMe" catchtap="defaultLogin">
+    <image src="/images/user.png" style="width: 68px;height: 68px;border: 1px solid #ddd; float: left; margin: 23px 15px; border-radius: 50%;"></image>
+    <view class="personalInfo">
+      <text>用户登录</text>
+    </view>
+  </view>
+</view>

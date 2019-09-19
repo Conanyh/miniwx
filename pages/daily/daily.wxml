@@ -1,0 +1,46 @@
+<!--pages/daily/daily.wxml-->
+<view class="container">
+
+  <view class="cards-area">
+    <view wx:for="{{dailyList}}" wx:key="id">
+      <view wx:if="{{item.id}}">
+        <view class="card">
+          <view class="title">
+            <text class="title_left">日志标题</text>
+            <text class="title_right">已完成</text>
+          </view>
+          <view class="content-area">
+            <view class="left-area">
+              <text class="card-content">上报日志描述上报日志描述上报日志描述上报日志描述上报日志描述上报日志描述</text>
+              <view class="info-area">
+                <text class="posted-date">{{item.posted_at}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cards-area">
+    <view wx:for="{{dailyList}}" wx:key="id">
+      <view wx:if="{{item.id}}">
+        <view class="card">
+          <view class="title">
+            <text class="title_left">日志标题</text>
+            <text class="title_right">已完成</text>
+          </view>
+          <view class="content-area">
+            <view class="left-area">
+              <text class="card-content">上报日志描述上报日志描述上报日志描述上报日志描述上报日志描述上报日志描述</text>
+              <view class="info-area">
+                <text class="posted-date">{{item.posted_at}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <text class="info" wx:if="{{info}}">{{info}}</text>
+</view>

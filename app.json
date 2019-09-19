@@ -1,0 +1,46 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/daily/daily",
+    "pages/home/home",
+    "pages/wxlogin/wxlogin",
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/user/user",
+    "pages/service/service",
+    "pages/service/detail/detail",
+    "pages/issue/issue",
+    
+    "pages/logs/logs",
+    "pages/components/card/card"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "魏家庄街道",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#cf000d",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/ic_main_bar.png",
+        "selectedIconPath": "images/ic_main_bar_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/ic_main_person.png",
+        "selectedIconPath": "images/ic_main_person_selected.png",
+        "text": "我"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

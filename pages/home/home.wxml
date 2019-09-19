@@ -1,0 +1,80 @@
+<view class='indexContainer'>
+  <!-- logo图 -->
+  <view class='logo'>
+    <view>
+      <image src='/images/ic_loginlogo.png'></image>
+    </view>
+  </view>
+
+  <!-- 主题布局 -->
+  <view class='index-container'>
+
+    <view class='index-main-item' catchtap='issue' hover-class='indextapstyle'>
+      <view class='index-main-item-child'>
+        <view class='index-main-item-img'>
+          <image src='/images/ic_inspection.png' class='icon-style'></image>
+        </view>
+        <view class='indexfont'>
+          <text>问题上报</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='index-main-item' catchtap='service' hover-class='indextapstyle'>
+      <view class='index-main-item-child'>
+        <view class='index-main-item-img'>
+          <image src='/images/ic_event.png' class='icon-style'></image>
+        </view>
+        <view class='indexfont'>
+          <text>事件处理</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='index-main-item' catchtap='kehu' hover-class='indextapstyle'>
+      <view class='index-main-item-child'>
+        <view class='index-main-item-img'>
+          <image src='/images/ic_regulatory.png' class='icon-style'></image>
+        </view>
+        <view class='indexfont'>
+          <text>法规手册</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='index-main-item' catchtap='tongji' hover-class='indextapstyle'>
+      <view class='index-main-item-child'>
+        <view class='index-main-item-img'>
+          <image src='/images/ic_event.png' class='icon-style'></image>
+        </view>
+        <view class='indexfont'>
+          <text>日志</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='index-main-item' catchtap='xiaoshou' hover-class='indextapstyle'>
+      <view class='index-main-item-child'>
+        <view class='index-main-item-img'>
+          <image src='/images/ic_event.png' class='icon-style'></image>
+        </view>
+        <view class='indexfont'>
+          <text>积分</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='index-main-item' catchtap='other' hover-class='indextapstyle'>
+      <view class='index-main-item-child'>
+        <view class='index-main-item-img'>
+          <image src='/images/ic_event.png' class='icon-style'></image>
+        </view>
+        <view class='indexfont'>
+          <text>设置</text>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+
+</view>

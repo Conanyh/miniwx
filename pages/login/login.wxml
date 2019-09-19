@@ -1,0 +1,42 @@
+<view class='loginContainer'>
+  <view class='setList'>
+    <view class="weui-cells__title"></view>
+    <view class="userinfo">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="/images/ic_loginlogo.png" mode="cover"></image>
+    </view>
+
+    <form bindsubmit='bindUser'>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view>
+            <image src='/images/shouji.png' class='binduserImg'></image>
+          </view>
+        </view>
+        <view class="weui-cell__bd" style='margin-left:18px;'>
+          <input class="weui-input" name="phone" maxlength="11" placeholder='请输入手机号码' placeholder-style="font-size:12px;" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view>
+            <image src='/images/suo.png' class='binduserImg'></image>
+          </view>
+        </view>
+        <view class="weui-cell__bd" style='margin-left:18px;'>
+          <input type='password' class="weui-input" name="password" placeholder='请输入密码' placeholder-style="font-size:12px;"/>
+        </view>
+      </view>
+
+      <view class="add_cancle_device">
+        <button class="addDevice-btn1" form-type="submit" plain="true">
+          <text style='color:#fff'>登录</text>
+        </button>
+      </view>
+    </form>
+    <view class="add_cancle_device">
+      <button class="addDevice-btn1" catchtap="register">
+        <text style='color:#fff'>注册</text>
+      </button>
+    </view>
+  </view>
+</view>

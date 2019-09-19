@@ -1,0 +1,43 @@
+<!--pages/service/detail/detail.wxml-->
+<view class="container">
+  <!-- <view class="title">{{serviceData.address}}</view> -->
+  <view class="meta-header">
+    <text class="author">地址：{{detail.address}}</text>
+    <text class="posted-date">时间: {{detail.created_at}}</text>
+  </view>
+  <view class="content">
+    <rich-text nodes="描述: {{detail.description}}"></rich-text>
+  </view>
+  <text class="info" wx:if="{{info}}">{{info}}</text>
+  <view class="divLine"></view>
+  <view class="service-area">
+    <form bindsubmit="bindService">
+      <input type='hidden' name="id" value='{{detail.id}}' style='display:none'></input>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <textarea class="weui-textarea content" placeholder="请输入处理信息" name="issueInfo" placeholder-style="font-size:12px;" style="height:80px;"></textarea>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd" style="height:160px;">
+            <view wx:if="{{src}}">
+              <image src="{{src}}" style="height:180px" name="image"></image>
+            </view>
+            <view wx:else>
+              <view class="weui-uploader__input-box" style="margin-left: 130px;margin-top: 40px;">
+                <view class="weui-uploader__input" bindtap="takePhoto"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-btn-area">
+        <button class="weui-btn" style="background-color:#cf000d" type="primary" form-type="submit">提交</button>
+      </view>
+    </form>
+  </view>
+</view>

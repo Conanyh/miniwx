@@ -1,0 +1,63 @@
+<view class='list-msg'>
+  <form bindsubmit="bindIssueForm">
+    <view>
+      <!-- 问题标题 -->
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <input class="content" placeholder="问题标题:" name="title" placeholder-style="font-size:12px;"></input>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view>
+      <!-- 地址 -->
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <input class="content" placeholder="详细地址:" name="address" placeholder-style="font-size:12px;"></input>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view>
+      <!-- 问题描述 -->
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <textarea class="weui-textarea content" placeholder="问题描述:" name="description" placeholder-style="font-size:12px;"></textarea>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd" style="height:160px;">
+            <view wx:if="{{src}}">
+              <image src="{{src}}" style="height:180px" name="image"></image>
+            </view>
+            <view wx:else>
+              <view class="weui-uploader__input-box" style="margin-left: 130px;margin-top: 40px;">
+                <view class="weui-uploader__input" bindtap="takePhoto"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" style="background-color:#cf000d; font-size:14px;font-family:YouYuan;" form-type="submit">确定</button>
+      </view>
+    </view>
+  </form>
+</view>

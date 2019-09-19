@@ -1,0 +1,59 @@
+.logo{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+}
+
+.logo image{
+  width: 120px;
+  height: 120px;
+}
+
+.index-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  margin-top: 50rpx;
+  margin-left: 43rpx;
+}
+.indexfont{
+  font-family: YouYuan;
+  font-size: 12px;
+  color: #222;
+  font-weight: 600;
+  position: absolute;
+  top: 160rpx;
+}
+.icon-style{
+  width: 46px;
+  height: 46px;
+}
+.index-main-item-child{
+  position: relative;
+  width: 62px;
+}
+.index-main-item{
+  height: 200rpx;
+  width: 25%;
+  margin: 10px 10px 15px 10px;
+  border-radius: 16px;
+  color: #58595e;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  font-weight: 500;
+}
+.indextapstyle{
+  background-clip: #f5f5f5;
+}
+.index-main-item-child{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

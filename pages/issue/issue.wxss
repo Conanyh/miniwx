@@ -1,0 +1,101 @@
+.list-msg {
+    padding: 0 20rpx;
+    background-color: #fff;
+    position: relative;
+}
+ 
+.list-msg .list-msg1 {
+    /* height: 60rpx; */
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid #ccc; */
+    /* padding: 0 10rpx; */
+}
+ 
+.select_box {
+    background-color: #eee;
+    padding: 0 10rpx;
+    width: 93%;
+    position: absolute;
+    top: 65rpx;
+    z-index: 1;
+    overflow: hidden;
+    animation: myfirst 0.5s;
+}
+ 
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 210rpx;
+    }
+}
+ 
+.select_one {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* 分割线样式 */
+.divLine{
+ background: white;
+ width: 100%;
+ height: 5rpx;
+ margin-top:20rpx;
+ margin-bottom: 20rpx; 
+}
+
+.list-msg .list-msg2 {
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 0 10rpx;
+}
+
+.select_box2 {
+    background-color: #eee;
+    padding: 0 10rpx;
+    width: 93%;
+    position: absolute;
+    top: 173rpx;
+    z-index: 1;
+    overflow: hidden;
+    animation: myfirst 0.5s;
+}
+
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 210rpx;
+    }
+}
+ 
+.select_two {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.weui-cells_after-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+/* .weui-cell::after {
+  bottom: 0;
+  border-bottom: 0rpx solid #fff;
+} */
+
