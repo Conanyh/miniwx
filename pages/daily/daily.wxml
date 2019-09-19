@@ -1,7 +1,9 @@
 <!--pages/daily/daily.wxml-->
 <view class="container">
-
   <view class="cards-area">
+    <view wx:if="{{dailyList.length == 0}}">
+      <view class="no-content"><text>暂无数据</text></view>
+    </view>
     <view wx:for="{{dailyList}}" wx:key="id">
       <view wx:if="{{item.id}}">
         <view class="card">
@@ -22,6 +24,6 @@
       </view>
     </view>
   </view>
-  
+
   <text class="info" wx:if="{{info}}">{{info}}</text>
 </view>

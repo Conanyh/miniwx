@@ -7,37 +7,14 @@
     <view class="userinfo-content">
       <!-- 用户头像 -->
       <view class="userinfo-photo">
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
         <!-- <image wx:if="{{hasUserInfo && canIUse}}" src="{{userInfo.avatarUrl}}" mode='widthFix'></image> -->
       </view>
       <!-- 用户名称 -->
-      <text class="user" wx:if="{{token != ''}}">已登录</text>
+      <text class="user" wx:if="{{token}}">已登录</text>
       <button class='user-sq' catchtap="defaultLogin" wx:else>用户登录</button>
     </view>
   </view>
-  <!-- 我的订单 -->
-  <!-- <view class="shop">
-    <view class="myshop">
-      <text class="buy">我的订单</text>
-      <view bindtap='jumpDetail'>
-        <text class="all" decode='true'>查看全部 &gt;</text>
-      </view>
-    </view>
-    <view class="service">
-      <view class="myservice" bindtap='jumpShare'>
-        <image src="../../images/fxx.png"></image>
-        <text>上报量</text>
-      </view>
-      <view class="myservice" bindtap='jumpAppraise'>
-        <image src="../../images/pj.png"></image>
-        <text>范围</text>
-      </view>
-      <view class="myservice" bindtap='jumpAppraise'>
-        <image src="../../images/pj.png"></image>
-        <text>情况</text>
-      </view>
-    </view>
-  </view> -->
 
   <view class='mine'>
     <!-- 我的积分 -->
@@ -50,7 +27,9 @@
           <text>我的积分</text>
         </view>
       </view>
+      
       <view class='right-img'>
+        <text>2</text>
         <image src='/images/right.png' mode='widthFix'></image>
       </view>
     </view>

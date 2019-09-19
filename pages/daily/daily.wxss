@@ -73,6 +73,13 @@
   color: rgb(153, 153, 153);
   font-size: 12px;
 }
+.cards-area .no-content{
+  text-align: center
+}
+.cards-area .no-content text{
+  font-size: 12px;
+  color: rgb(168, 168, 168);
+}
 .card .content-area {
   display: -webkit-box;
 }

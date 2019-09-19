@@ -66,7 +66,7 @@ Page({
 
   // 问题上报
   issue: function (e) {
-    if (!app.globalData.token) {
+    if (wx.getStorageSync('token')) {
       wx.navigateTo({
         url: '/pages/issue/issue',
       });
@@ -78,7 +78,7 @@ Page({
   },
   
   daily: function (e) {
-    if (!app.globalData.token) {
+    if (wx.getStorageSync('token')) {
       wx.navigateTo({
         url: '/pages/daily/daily',
       })

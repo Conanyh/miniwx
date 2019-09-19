@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/daily/daily",
+    "pages/mine/mine",
     "pages/index/index",
-    
+    "pages/daily/daily",
     "pages/home/home",
     "pages/wxlogin/wxlogin",
-    "pages/mine/mine",
+    
     "pages/login/login",
     "pages/register/register",
     "pages/user/user",

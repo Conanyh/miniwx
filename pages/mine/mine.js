@@ -15,10 +15,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var token = wx.getStorageSync(token);
+    var token = wx.getStorageSync('token');
     var that = this;
     this.setData({
-      userInfo: app.globalData.userInfo
+      userInfo: app.globalData.userInfo,
+      token: token
     })
     if (app.globalData.userInfo) {
       this.setData({
@@ -46,6 +47,30 @@ Page({
         }
       })
     }
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    var token = wx.getStorageSync('token');
+    var that = this;
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      token: token
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    var token = wx.getStorageSync('token');
+    var that = this;
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      token: token
+    })
   },
 
   getUserInfo: function (e) {

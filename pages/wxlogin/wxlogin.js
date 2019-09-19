@@ -54,6 +54,7 @@ Page({
     if (info.detail.userInfo) {
       wx.login({
         success: function(res) {
+          console.log(res.code);
           if (res.code) {
             // 发起网络请求
             wx.request({
@@ -72,6 +73,7 @@ Page({
                   // token失效， 重新请求接口获取新的token
                   if (res.data.status_code == 500) {
                     wx.request({
+                      method: "PUT",
                       url: app.globalData.hostUrl + '/api/authorizations/current',
                       header: {
                         'content-type': 'application/x-www-form-urlencoded',
