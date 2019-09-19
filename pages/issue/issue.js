@@ -84,10 +84,8 @@ Page({
     var that = this
     var title = e.detail.value.title
     var address = e.detail.value.address
-    var description = e.detail.value.description
+    var contents = e.detail.value.contents
     var imgFile = that.data.src
-    console.log(imgFile == undefined)
-
     if (title.length == 0) {
       wx.showModal({
         title: '提示',
@@ -98,10 +96,10 @@ Page({
         title: '提示',
         content: '地址不能为空',
       });
-    } else if (description.length == 0) {
+    } else if (contents.length == 0) {
       wx.showModal({
         title: '提示',
-        content: '描述不能为空',
+        content: '内容不能为空',
       });
     } else if (imgFile == undefined) {
       wx.showModal({
@@ -110,21 +108,22 @@ Page({
       });
     } else {
       wx.uploadFile({
-        url: 'https://www.zhuzones.top/api/eventReport',
-        method: 'post',
+        url: app.globalData.hostUrl + '/api/matterStore',
+        method: 'POST',
         filePath: imgFile[0],
-        name: 'bad_img',
+        name: 'image',
         header: {
           'Content-type': 'multipart/form-data',
-          'Authorization': 'Bearer ' + app.globalData.token,
+          'Authorization': 'Bearer ' + wx.getStorageSync('token'),
         },
         formData: {
           'title': title,
           'address': address,
-          'description': description,
+          'contents': contents,
         },
         success: function (res) {
-          if (res.statusCode == 201) {
+          console.log(res);
+          if (res.statusCode == 200) {
             wx.showModal({
               title: '提示',
               content: '添加成功',

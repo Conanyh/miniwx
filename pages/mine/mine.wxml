@@ -10,7 +10,7 @@
         <image src="{{userInfo.avatarUrl}}" mode='widthFix'></image>
       </view>
       <!-- 用户名称 -->
-      <text class="user" wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</text>
+      <text class="user" wx:if="{{token != ''}}">已登录</text>
       <button class='user-sq' catchtap="defaultLogin" wx:else>用户登录</button>
     </view>
   </view>

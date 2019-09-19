@@ -39,6 +39,15 @@ Page({
     }
   },
 
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
+
   bindGetUserInfo: function(res) {
     let info = res;
     console.log(info);
@@ -76,22 +85,24 @@ Page({
                   wx.setStorageSync('token', res.data.access_token);
                   // token时间， 默认是3600s
                   wx.setStorageSync('tokenTime', res.data.expires_in);
-
-                  wx.request({
-                    url: app.globalData.hostUrl +'/api/user',
-                    success: function (res) {
-                      // 缓存用户所有信息
-                      wx.setStorageSync(nickName, res.data.nickname);
-                      wx.setStorageSync(avatarUrl, res.data.avatarurl);
-                      wx.switchTab({
-                        url: '/pages/mine/mine',
-                      })
-                    },
-                    header: {
-                      'content-type': 'application/x-www-form-urlencoded',
-                      'Authorization': 'Bearer ' + wx.getStorageSync('token')
-                    }
+                  wx.switchTab({
+                    url: '/pages/mine/mine',
                   })
+                  // wx.request({
+                  //   url: app.globalData.hostUrl +'/api/user',
+                  //   success: function (res) {
+                  //     // 缓存用户所有信息
+                  //     wx.setStorageSync(nickName, res.data.nickname);
+                  //     wx.setStorageSync(avatarUrl, res.data.avatarurl);
+                  //     wx.switchTab({
+                  //       url: '/pages/mine/mine',
+                  //     })
+                  //   },
+                  //   header: {
+                  //     'content-type': 'application/x-www-form-urlencoded',
+                  //     'Authorization': 'Bearer ' + wx.getStorageSync('token')
+                  //   }
+                  // })
                 } else {
                   wx.showModal({
                     title: '提示',
@@ -109,26 +120,6 @@ Page({
                     }
                   })
                 }
-
-
-                // if (res.data.code == 200) {
-                //   app.globalData.token = res.data.data.token;
-                //   var userinfo = [];
-                //   userinfo['id'] = res.data.data.id;
-                //   userinfo['nickName'] = res.data.data.nickName;
-                //   userinfo['avatarUrl'] = res.data.data.avatarUrl;
-                //   wx.setStorageSync('userinfo', userinfo);
-                //   app.globalData.userInfo = wx.getStorageSync(userinfo);
-                //   wx.reLaunch({
-                //     url: '/pages/mine/mine',
-                //   })
-                // } else {
-                //   wx.showToast({
-                //     title: res.data.message,
-                //     icon: 'none',
-                //     duration: 2500
-                //   })
-                // }
               }
             })
           } else {

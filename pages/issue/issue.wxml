@@ -31,7 +31,7 @@
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell">
           <view class="weui-cell__bd">
-            <textarea class="weui-textarea content" placeholder="问题描述:" name="description" placeholder-style="font-size:12px;"></textarea>
+            <textarea class="weui-textarea content" placeholder="问题内容:" name="contents" placeholder-style="font-size:12px;"></textarea>
           </view>
         </view>
       </view>
