@@ -1,4 +1,4 @@
-const app = getApp()
+// pages/about/about.js
 Page({
 
   /**
@@ -63,33 +63,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: "平安魏家庄",
-      path: "pages/index/index"
-    }
-  },
-
-  // 问题上报
-  issue: function (e) {
-    if (wx.getStorageSync('token')) {
-      wx.navigateTo({
-        url: '/pages/issue/issue',
-      });
-    } else {
-      wx.navigateTo({
-        url: '/pages/wxlogin/wxlogin',
-      });
-    }
-  },
-  
-  daily: function (e) {
-    if (wx.getStorageSync('token')) {
-      wx.navigateTo({
-        url: '/pages/daily/daily',
-      })
-    } else {
-      wx.navigateTo({
-        url: '/pages/wxlogin/wxlogin',
-      });
+      path: "pages/about/about"
     }
   }
-
 })

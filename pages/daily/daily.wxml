@@ -14,6 +14,7 @@
           <view class="content-area">
             <view class="left-area">
               <text class="card-content">{{item.content}}</text>
+              <!-- <image src="https://www.zhuzones.top/{{item.image}}" /> -->
               <view class="info-area">
                 <text class="posted-date">{{item.created_at}}</text>
                 <text class="views">{{item.address}}</text>

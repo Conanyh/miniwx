@@ -87,24 +87,28 @@ Page({
     var contents = e.detail.value.contents
     var imgFile = that.data.src
     if (title.length == 0) {
-      wx.showModal({
-        title: '提示',
-        content: '标题不能为空',
+      wx.showToast({
+        title: '标题不能为空',
+        icon: 'none',
+        duration: 2000
       });
     } else if (address.length == 0) {
-      wx.showModal({
-        title: '提示',
-        content: '地址不能为空',
+      wx.showToast({
+        title: '地址不能为空',
+        icon: 'none',
+        duration: 2000
       });
     } else if (contents.length == 0) {
-      wx.showModal({
-        title: '提示',
-        content: '内容不能为空',
+      wx.showToast({
+        title: '内容不能为空',
+        icon: 'none',
+        duration: 2000
       });
     } else if (imgFile == undefined) {
-      wx.showModal({
-        title: '提示',
-        content: '请上传图片',
+      wx.showToast({
+        title: '请上传图片',
+        icon: 'none',
+        duration: 2000
       });
     } else {
       wx.uploadFile({

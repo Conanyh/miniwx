@@ -87,24 +87,28 @@ Page({
                   wx.setStorageSync('token', res.data.access_token);
                   // token时间， 默认是3600s
                   wx.setStorageSync('tokenTime', res.data.expires_in);
-                  wx.switchTab({
-                    url: '/pages/mine/mine',
-                  })
-                  // wx.request({
-                  //   url: app.globalData.hostUrl +'/api/user',
-                  //   success: function (res) {
-                  //     // 缓存用户所有信息
-                  //     wx.setStorageSync(nickName, res.data.nickname);
-                  //     wx.setStorageSync(avatarUrl, res.data.avatarurl);
-                  //     wx.switchTab({
-                  //       url: '/pages/mine/mine',
-                  //     })
-                  //   },
-                  //   header: {
-                  //     'content-type': 'application/x-www-form-urlencoded',
-                  //     'Authorization': 'Bearer ' + wx.getStorageSync('token')
-                  //   }
+                  // wx.switchTab({
+                  //   url: '/pages/mine/mine',
                   // })
+                  wx.request({
+                    url: 'https://www.zhuzones.top/api/weappUser',
+                    method: 'GET',
+                    success: function (res) {
+                      console.log(res.data)
+                      console.log(res.data.integral)
+                      // 缓存用户所有信息
+                      wx.setStorageSync('nickName', res.data.nickname);
+                      wx.setStorageSync('avatarUrl', res.data.avatarurl);
+                      wx.setStorageSync('integral', res.data.integral);
+                      wx.switchTab({
+                        url: '/pages/index/index',
+                      })
+                    },
+                    header: {
+                      'content-type': 'application/x-www-form-urlencoded',
+                      'Authorization': 'Bearer ' + wx.getStorageSync('token')
+                    }
+                  })
                 } else {
                   wx.showModal({
                     title: '提示',

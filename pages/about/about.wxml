@@ -1,0 +1,16 @@
+<!--pages/about/about.wxml-->
+<view class='indexContainer'>
+  <!-- logo图 -->
+  <view class='logo'>
+    <view>
+      <image src='/images/ic_loginlogo.png'></image>
+    </view>
+  </view>
+
+  <!-- 主题布局 -->
+  <view class='index-container'>
+    <text>魏家庄街道(Weijiazhuang Sub-district)位于济南市市中区北部，辖区东到顺河街，西至纬一路，南到杆石桥，北到馆驿街，面积0.88平方公里。是济南市的黄金地带 、政府机关和企事业单位遍布。办事处以古老的魏家庄命名，办公机关驻麟祥街96号，有3、49、101、K50、K51等多条公交线路从辖区过往，交通十分便利。辖区内驻有山东省建设银行、济南市商业银行、济南市中级人民法院、人民商场、人防商城、济南市无线电九厂等82个单位，其中省级机关5个，市级机关12个，区级机关6个，区医院1个，学校4个，教会2个，其他企业44个，民营企业7个，个体工商户1105个。</text>
+    <text></text>
+  </view>
+
+</view>

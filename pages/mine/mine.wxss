@@ -169,6 +169,9 @@ border:none;
   display: flex;
   justify-content: flex-start
 }
+.mineeach-left text{
+  font-size: 14px;
+}
 .left-img{
   width: 120rpx;
   text-align: center
@@ -178,15 +181,9 @@ border:none;
   height: 50rpx;
   margin-top: 20rpx
 }
-/* .left-num {
-  float: right
-} */
 .right-img text {
-  position: absolute;
   color: rgb(139, 139, 139);
   line-height: 40px;
-  top: 20;
-  left: 20;
 }
 .right-img image{
   width: 40rpx;

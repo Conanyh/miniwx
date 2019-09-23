@@ -16,10 +16,12 @@ Page({
    */
   onLoad: function (options) {
     var token = wx.getStorageSync('token');
+    var integral = wx.getStorageSync('integral');
     var that = this;
     this.setData({
       userInfo: app.globalData.userInfo,
-      token: token
+      token: token,
+      integral: integral
     })
     if (app.globalData.userInfo) {
       this.setData({
@@ -54,10 +56,12 @@ Page({
    */
   onReady: function () {
     var token = wx.getStorageSync('token');
+    var integral = wx.getStorageSync('integral');
     var that = this;
     this.setData({
       userInfo: app.globalData.userInfo,
-      token: token
+      token: token,
+      integral: integral
     })
   },
 
@@ -66,11 +70,23 @@ Page({
    */
   onShow: function () {
     var token = wx.getStorageSync('token');
+    var integral = wx.getStorageSync('integral');
     var that = this;
     this.setData({
       userInfo: app.globalData.userInfo,
-      token: token
+      token: token,
+      integral: integral
     })
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: `平安魏家庄`,
+      path:"/pages/mine/mine"
+    }
   },
 
   getUserInfo: function (e) {
@@ -82,31 +98,17 @@ Page({
     })
   },
 
-  // user: function () {
-  //   var that = this;
-  //   var token = wx.getStorageSync('token');
-  //   wx.request({
-  //     url: 'https://www.zhuzones.top/api/user',
-  //     method: 'get',
-  //     header: {
-  //       'Content-type': 'application/json',
-  //       'Authorization': 'Bearer ' + token,
-  //     },
-  //     success: function (res) {
-  //       console.log(res)
-  //       that.setData({
-  //         name: res.data.name,
-  //         role: res.data.role
-  //       })
-  //     }
-  //   })
-  // },
+  about:function () {
+    wx.navigateTo({
+      url: '/pages/about/about',
+    })
+  }, 
 
   // 登录
   defaultLogin: function (e) {
     // 点击登录
     wx.navigateTo({
-      url: '../wxlogin/wxlogin',
+      url: '/pages/wxlogin/wxlogin',
     })
   }
 

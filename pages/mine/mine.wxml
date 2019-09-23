@@ -8,7 +8,7 @@
       <!-- 用户头像 -->
       <view class="userinfo-photo">
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <!-- <image wx:if="{{hasUserInfo && canIUse}}" src="{{userInfo.avatarUrl}}" mode='widthFix'></image> -->
+        <!-- <image wx:if="{{avatarUrl}}" src="{{avatarUrl}}" mode='widthFix'></image> -->
       </view>
       <!-- 用户名称 -->
       <text class="user" wx:if="{{token}}">已登录</text>
@@ -29,12 +29,12 @@
       </view>
       
       <view class='right-img'>
-        <text>2</text>
+        <text>{{ integral }}</text>
         <image src='/images/right.png' mode='widthFix'></image>
       </view>
     </view>
     <!-- 我的上报 -->
-    <view class='mine-each' bindtap='jumpdraw'>
+    <!-- <view class='mine-each' bindtap='jumpdraw'>
       <view class='mineeach-left'>
         <view class='left-img'>
           <image src='/images/ic_person_menu01.png'></image>
@@ -46,7 +46,7 @@
       <view class='right-img'>
         <image src='/images/right.png' mode='widthFix'></image>
       </view>
-    </view>
+    </view> -->
     <!-- 账号设置 -->
     <view class='mine-each' bindtap='jumpdraw'>
       <view class='mineeach-left'>
@@ -54,22 +54,23 @@
           <image src='/images/ic_person_menu02.png'></image>
         </view>
         <view>
-          <text>账号设置</text>
+          <text>版本号</text>
         </view>
       </view>
       <view class='right-img'>
+        <text>1.1</text>
         <image src='/images/right.png' mode='widthFix'></image>
       </view>
     </view>
 
-    <!-- 分享二维码 -->
-    <view class='mine-each' bindtap='shareercode'>
+    <!-- 关于 -->
+    <view  class='mine-each' bindtap='about'>
       <view class='mineeach-left'>
         <view class='left-img'>
           <image src='/images/share.png'></image>
         </view>
         <view>
-          <text>分享二维码</text>
+          <text>关于</text>
         </view>
       </view>
       <view class='right-img'>
