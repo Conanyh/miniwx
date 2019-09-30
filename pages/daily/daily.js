@@ -19,7 +19,6 @@ Page({
     var url = app.globalData.hostUrl + '/api/historyMatters';
     app.wxRequest('GET', url, {}, 
       (res) => {
-        console.log(res)
         that.setData({
           dailyList: res
         });

@@ -18,13 +18,31 @@
   justify-content: flex-start;
   box-sizing: border-box;
   flex-wrap: wrap;
-  margin-top: 50rpx;
+  margin-top: 30rpx;
   margin-left:50rpx;
   margin-right:50rpx;
 }
 
-.index-container text{
+.index-container .text-text{
   text-indent: 2em;
   font-size: 14px;
   margin-bottom: 15rpx;
+  font-family: Microsoft YaHei
 }
+.tip {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+.tip .text-tip{
+  width: 100%;
+  color: red;
+  font-size: 16px;
+  margin-bottom: 15rpx;
+  text-align: center;
+  font-weight: bold;
+  font-family: Microsoft YaHei
+}
+

@@ -8,7 +8,6 @@
       <!-- 用户头像 -->
       <view class="userinfo-photo">
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <!-- <image wx:if="{{avatarUrl}}" src="{{avatarUrl}}" mode='widthFix'></image> -->
       </view>
       <!-- 用户名称 -->
       <text class="user" wx:if="{{token}}">已登录</text>
@@ -33,21 +32,7 @@
         <image src='/images/right.png' mode='widthFix'></image>
       </view>
     </view>
-    <!-- 我的上报 -->
-    <!-- <view class='mine-each' bindtap='jumpdraw'>
-      <view class='mineeach-left'>
-        <view class='left-img'>
-          <image src='/images/ic_person_menu01.png'></image>
-        </view>
-        <view>
-          <text>我的上报</text>
-        </view>
-      </view>
-      <view class='right-img'>
-        <image src='/images/right.png' mode='widthFix'></image>
-      </view>
-    </view> -->
-    <!-- 账号设置 -->
+    <!-- 版本号 -->
     <view class='mine-each' bindtap='jumpdraw'>
       <view class='mineeach-left'>
         <view class='left-img'>
@@ -58,7 +43,7 @@
         </view>
       </view>
       <view class='right-img'>
-        <text>1.1</text>
+        <text>{{bbh}}</text>
         <image src='/images/right.png' mode='widthFix'></image>
       </view>
     </view>

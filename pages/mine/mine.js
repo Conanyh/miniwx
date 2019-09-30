@@ -8,6 +8,7 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
+    bbh: 1.1,
     canIUse: wx.canIUse('button.open-type.getUsersInfo')
   },
 

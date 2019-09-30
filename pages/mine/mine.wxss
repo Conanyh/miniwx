@@ -37,10 +37,11 @@
   font-size:29rpx;
 }
 .user-sq{
-  font-size: 32rpx
+  font-size: 32rpx;
+  color: #a3a3a3;
 }
 .user-sq::after{
-border:none;
+  border:none;
 }
 /* 用户头像 */
 .userinfo-photo{

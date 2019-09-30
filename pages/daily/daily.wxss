@@ -111,7 +111,8 @@
   margin-right: 10rpx;
 }
 .card .content-area .left-area .info-area .views {
-  margin-left: 30rpx;
+  /* margin-left: 30rpx; */
+  display: flex;
 }
 .card .content-area .left-area .info-area .views:before {
   content: '\e666';
@@ -120,7 +121,7 @@
 .card .content-area .right-area {
   margin-left: 20rpx;
 }
-.card .content-area .thumbnail {
+.card .content-area .img {
   width: 150rpx;
   height: 150rpx;
   background-color: #eee;
