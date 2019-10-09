@@ -56,7 +56,7 @@
 
     <view>
       <view class="weui-btn-area">
-        <button class="weui-btn" type="primary" style="background-color:#cf000d; font-size:14px;font-family:YouYuan;" form-type="submit">确定</button>
+        <button class="weui-btn" type="primary" style="background-color:#fc7b83; font-size:14px;font-family:YouYuan;" form-type="submit">确定</button>
       </view>
     </view>
   </form>

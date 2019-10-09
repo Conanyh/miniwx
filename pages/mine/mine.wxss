@@ -22,7 +22,7 @@
   display: flex;
   background: #fff;
   align-items: center;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 5px solid #EEEEEE;
 }
 /* 用户头像信息 */
 .userinfo-content{
@@ -49,7 +49,7 @@
   height:50px;
   border-radius:50%; 
   margin-right: 10px;
-  background: pink;
+  background: rgb(184, 183, 183);
 }
 /* 用户头像大小 */
 .userinfo-photo image{

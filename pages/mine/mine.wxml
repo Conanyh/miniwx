@@ -20,7 +20,7 @@
     <view class='mine-each' bindtap='jumpComments'>
       <view class='mineeach-left'>
         <view class='left-img'>
-          <image src='/images/gy.jpg'></image>
+          <image src='/images/jifen.png'></image>
         </view>
         <view>
           <text>我的积分</text>
@@ -36,7 +36,7 @@
     <view class='mine-each' bindtap='jumpdraw'>
       <view class='mineeach-left'>
         <view class='left-img'>
-          <image src='/images/ic_person_menu02.png'></image>
+          <image src='/images/banben.png'></image>
         </view>
         <view>
           <text>版本号</text>
@@ -52,7 +52,7 @@
     <view  class='mine-each' bindtap='about'>
       <view class='mineeach-left'>
         <view class='left-img'>
-          <image src='/images/share.png'></image>
+          <image src='/images/about.png'></image>
         </view>
         <view>
           <text>关于</text>

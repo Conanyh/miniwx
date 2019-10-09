@@ -1,8 +1,21 @@
 <view class='indexContainer'>
   <!-- logo图 -->
-  <view class='logo'>
+  <!-- <view class='logo'>
     <view>
       <image src='/images/ic_loginlogo.png'></image>
+    </view>
+  </view> -->
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper
+        indicator-dots="{{indicatorDots}}" indicator-active-color="{{indicatorActiveColor}}"  autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+          <swiper-item>
+            <image src='{{item}}' style="height:150px; width:100%;" />
+          </swiper-item>
+        </block>
+      </swiper>
     </view>
   </view>
 
@@ -12,25 +25,31 @@
     <view class='index-main-item' catchtap='issue' hover-class='indextapstyle'>
       <view class='index-main-item-child'>
         <view class='index-main-item-img'>
-          <image src='/images/ic_inspection.png' class='icon-style'></image>
+          <image src='/images/icon_shijian.png' class='icon-style'></image>
         </view>
-        <view class='indexfont'>
+        <!-- <view class='indexfont'>
           <text>问题上报</text>
-        </view>
+        </view> -->
       </view>
     </view>
 
     <view class='index-main-item' catchtap='daily' hover-class='indextapstyle'>
       <view class='index-main-item-child'>
         <view class='index-main-item-img'>
-          <image src='/images/ic_event.png' class='icon-style'></image>
+          <image src='/images/icon_rizhi.png' class='icon-style'></image>
         </view>
-        <view class='indexfont'>
+        <!-- <view class='indexfont'>
           <text>日志</text>
-        </view>
+        </view> -->
       </view>
     </view>
     
   </view>
 
+  <!-- footer -->
+  <view class="footer">
+    <view class="bg_footer">
+      <image src="/images/bg_index.png"></image>
+    </view>
+  </view>
 </view>

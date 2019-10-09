@@ -5,7 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // imgUrls: [
+    //   app.globalData.hostUrl + '/xcximg/lunbo1.png',
+    //   app.globalData.hostUrl + '/xcximg/lunbo2.png',
+    //   app.globalData.hostUrl + '/xcximg/lunbo3.png'
+    // ],
+    imgUrls: [
+      '/images/lb1.png',
+      '/images/lb2.png',
+      '/images/lb3.png',
+    ],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    circular: false,
+    interval: 2000,
+    duration: 1000,
+    previousMargin: 0,
+    nextMargin: 0,
+    indicatorActiveColor: '#eeeeee'
   },
 
   /**

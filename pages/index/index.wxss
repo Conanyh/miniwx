@@ -29,8 +29,8 @@
   top: 305rpx;
 }
 .icon-style{
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 155px;
 }
 .index-main-item-child{
   position: relative;
@@ -38,7 +38,7 @@
 }
 .index-main-item{
   height: 400rpx;
-  width: 45%;
+  width: 47%;
   border-radius: 16px;
   color: #58595e;
   display: flex;
@@ -55,4 +55,71 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+
+.page-body{
+  padding-top: 60rpx;
+}
+.page-section{
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+.page-section_center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-section:last-child{
+  margin-bottom: 0;
+}
+.page-section-gap{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.page-section-spacing{
+  box-sizing: border-box;
+  padding: 0 80rpx;
+}
+.page-section-title{
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.page-section-gap .page-section-title{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+button{
+  margin-bottom: 30rpx;
+}
+button:last-child{
+  margin-bottom: 0;
+}
+.page-section-title{
+  padding: 0;
+}
+.swiper-item{
+  display: block;
+  height: 150px;
+}
+.page-section-title{
+  margin-top: 60rpx;
+  position: relative;
+}
+
+.footer{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  bottom: 0px;
+}
+
+.bg_footer image{
+  width: 100%;
+  height: 100px;
 }
