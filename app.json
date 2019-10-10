@@ -1,6 +1,11 @@
 {
   "pages": [
+    "pages/info/info",
     "pages/index/index",
+    "pages/elegance/eleganceDetail/eleganceDetail",
+    "pages/elegance/elegance",
+    
+    "pages/info/detail/detail",
     "pages/daily/daily",
     "pages/wxlogin/wxlogin",
     "pages/mine/mine",
@@ -10,7 +15,7 @@
     "pages/about/about"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "魏家庄街道",
     "navigationBarTextStyle": "black"

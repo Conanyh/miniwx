@@ -5,31 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dailyList: [],
-    isLoadingMore: false,
+    infoList: [],
     currentPage: 1,
-    info: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.loadDaily();
+    this.loadInfoList();
   },
 
-  onShow: function () {
-    this.loadDaily();
-  },
-
-  loadDaily: function() {
+  loadInfoList: function () {
     var that = this;
-    var url = app.globalData.hostUrl + '/api/historyMatters';
+    var url = app.globalData.hostUrl + '/api/openMatters';
     app.wxRequest('GET', url, {},
       (res) => {
         that.setData({
-          dailyList: res
+          infoList: res
         });
+        // wx.hideLoading();
       },
       (err) => {
         if (err.statusCode == '500') {
@@ -40,7 +35,7 @@ Page({
               'content-type': 'application/x-www-form-urlencoded',
               'Authorization': 'Bearer ' + wx.getStorageSync('token')
             },
-            success: function(res) {
+            success: function (res) {
               wx.setStorageSync('token', res.data.access_token);
               app.wxRequest('GET', url, {},
                 (res) => {
@@ -54,17 +49,24 @@ Page({
     )
   },
 
+  onShareAppMessage() {
+    return {
+      title: '要闻信息',
+      path: '/pages/info/info'
+    }
+  },
+
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     wx.startPullDownRefresh();
     var that = this;
     var url = app.globalData.hostUrl + '/api/historyMatters';
     app.wxRequest('GET', url, {},
       (res) => {
         that.setData({
-          dailyList: res
+          infoList: res
         });
         wx.stopPullDownRefresh();
       },
@@ -89,11 +91,14 @@ Page({
         }
       }
     )
-    
-
   },
 
-
-
+  // 详情
+  // infoDetail: function(e) {
+  //   console.log(e)
+  //   wx.navigateTo({
+  //     url: '/pages/info/detail/detail?id=' + e.currentTarget.dataset.id,
+  //   })
+  // }
 
 })

@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="cards-area">
+    <block wx:for="{{infoList}}" wx:key="id">
+      <view data-id="{{item.id}}" bindtap="infoDetail" wx:if="{{item.id}}">
+        <view class="card">
+          <!-- <view class="title">
+            <text class="title_left">{{item.title}}</text>
+          </view> -->
+          <view class="content-area">
+            <text class="title">#{{item.title}}# </text> <text class="card-content">{{item.content}}</text>
+          </view>
+          <view class="content-img">
+            <image src="https://www.zhuzones.top{{item.image}}" />
+          </view>
+          <view class="info-area">
+            <image src="/images/address.png"></image>
+            <text class="address">{{item.address}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
