@@ -7,8 +7,6 @@ Page({
   data: {
     imgUrls: [
       '/images/lb1.png',
-      '/images/lb2.png',
-      '/images/lb3.png',
     ],
     imgList: [],
     indicatorDots: true,
@@ -76,7 +74,7 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title: "平安魏家庄",
+      title: "幸福魏家庄",
       path: "pages/index/index"
     }
   },
@@ -105,13 +103,13 @@ Page({
       });
     }
   },
-  // 要闻信息
+  // 网格风采
   info: function (e) {
     wx.navigateTo({
       url: '/pages/info/info',
     })
   },
-  // 网格风采
+  // 要闻信息
   elegance: function (e) {
     wx.navigateTo({
       url: '/pages/elegance/elegance',

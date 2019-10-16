@@ -19,5 +19,6 @@
         </view>
       </view>
     </block>
+    <text class="tip" wx:if="{{tip}}">{{tip}}</text>
   </view>
 </view>

@@ -1,10 +1,9 @@
 {
   "pages": [
-    "pages/info/info",
     "pages/index/index",
-    "pages/elegance/eleganceDetail/eleganceDetail",
     "pages/elegance/elegance",
-    
+    "pages/elegance/eleganceDetail/eleganceDetail",
+    "pages/info/info",
     "pages/info/detail/detail",
     "pages/daily/daily",
     "pages/wxlogin/wxlogin",

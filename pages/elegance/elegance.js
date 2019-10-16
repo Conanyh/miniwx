@@ -8,6 +8,7 @@ Page({
   data: {
     eleganceList: [],
     currentPage: 1,
+    tip: '',
   },
 
   /**
@@ -17,15 +18,24 @@ Page({
     this.loadEleganceList();
   },
 
+  onShow: function () {
+    var that = this;
+    that.loadEleganceList();
+  },
+
   loadEleganceList: function () {
     var that = this;
-    var url = app.globalData.hostUrl + '/api/historyMatters';
+    var url = app.globalData.hostUrl + '/api/news';
     app.wxRequest('GET', url, {},
       (res) => {
         that.setData({
           eleganceList: res
         });
-        // wx.hideLoading();
+        if (res.length == 0) {
+          that.setData({
+            tip: '暂无数据'
+          })
+        }
       },
       (err) => {
         if (err.statusCode == '500') {
@@ -61,8 +71,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    // wx.startPullDownRefresh()
-    // wx.stopPullDownRefresh()
+
   },
 
   /**
@@ -72,10 +81,10 @@ Page({
 
   },
   // 详情
-  eleganceDetail: function (e) {
-    wx.navigateTo({
-      url: '/pages/elegance/eleganceDetail/eleganceDetail?id=' + e.currentTarget.dataset.id,
-    })
-  }
+  // eleganceDetail: function (e) {
+  //   wx.navigateTo({
+  //     url: '/pages/elegance/eleganceDetail/eleganceDetail?id=' + e.currentTarget.dataset.id,
+  //   })
+  // }
 
 })

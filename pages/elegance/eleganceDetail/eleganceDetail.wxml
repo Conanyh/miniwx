@@ -37,7 +37,27 @@
         </view>
 
         <view class="content-info">
-          <text>文字评论文字评论文字</text>
+          <text>文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字</text>
+        </view>
+
+
+      </view>
+      <view class="content">
+
+        <view class="userinfo">
+          <view class="userinfo-content">
+            <view class="userinfo-photo">
+              <image bindtap="bindViewTap" class="userinfo-avatar" src="/images/jifen.png" mode="cover"></image>
+            </view>
+            <view class="username">
+              <text class="user">name</text>
+              <text class="shijian">2019</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="content-info">
+          <text>文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字</text>
         </view>
 
 
@@ -45,10 +65,24 @@
     </view>
 
 
+
     <!-- <view class="talk" bindtap="bindReply">回复</view> -->
-    <view class="release" hidden="{{!releaseFocus}}">
-      <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" placeholder="评论 {{releaseName}}"></textarea>
-      <view class="submit">发送</view>
+    <view wx:if="{{!token}}">
+      <form>
+        <view class="release" hidden="{{!releaseFocus}}">
+          <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" name="comment" placeholder="请先登录" disabled="true"></textarea>
+          <button formType="submit" class="submit" wx:if="{{!token}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">登录</button>
+        </view>
+      </form>
     </view>
+    <view wx:else>
+      <form bindsubmit="sendSubmit">
+        <view class="release" hidden="{{!releaseFocus}}">
+          <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" name="comment" placeholder="评论 {{releaseName}}"></textarea>
+          <button formType="submit" class="submit">评论</button>
+        </view>
+      </form>
+    </view>
+
   </view>
 </view>

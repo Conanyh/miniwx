@@ -5,22 +5,23 @@
       <view data-id="{{item.id}}" bindtap="eleganceDetail" wx:if="{{item.id}}">
         <view class="card">
           <view class="title">
-            <text class="title_left">title</text>
+            <text class="title_left">{{item.header}}</text>
           </view>
           <view class="content-area">
-            <text class="card-content">content content content content contentcontent contentcontentcontentcontent</text>
+            <text class="card-content">{{item.sentence}}</text>
           </view>
-          <view class="content-img">
+          <!-- <view class="content-img">
             <image src="" />
             <image src="" />
             <image src="" />
-          </view>
+          </view> -->
           <view class="info-area">
             <image src="/images/address.png"></image>
-            <text class="address">江苏省苏州市工业园区</text>
+            <text class="address">{{item.created_at}}</text>
           </view>
         </view>
       </view>
     </block>
+    <text class="tip" wx:if="{{tip}}">{{tip}}</text>
   </view>
 </view>

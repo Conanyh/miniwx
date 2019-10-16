@@ -50,7 +50,6 @@ Page({
 
   bindGetUserInfo: function(res) {
     let info = res;
-    console.log(info);
     if (info.detail.userInfo) {
       wx.login({
         success: function(res) {

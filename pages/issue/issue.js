@@ -67,7 +67,7 @@ Page({
   takePhoto(e) {
     var that = this;
     wx.chooseImage({
-      count: 1,
+      count: 3,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: function(res) {

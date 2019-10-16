@@ -143,11 +143,13 @@
 }
 
 .release .submit {
-  width: 116rpx;
+  width: 130rpx;
   height: 64rpx;
   line-height: 64rpx;
   text-align: center;
-  color: #6c0;
+  color: #111;
+  font-size: 14px;
+  margin: 0 20rpx 0 10rpx;
 }
 
 
@@ -192,9 +194,16 @@
   height:100%;
   border-radius:50%; 
 }
+.content{
+  margin-bottom: 35rpx;
+}
 .content-info{
   font-size: 30rpx;
   margin-top: 7rpx;
-  margin-left: 50rpx;
+  padding: 0 0 0 80rpx;
 }
+.content-info text {
+  font-size: 28rpx;
+}
+
 

@@ -7,6 +7,7 @@ Page({
   data: {
     infoList: [],
     currentPage: 1,
+    tip:'',
   },
 
   /**
@@ -14,6 +15,11 @@ Page({
    */
   onLoad: function(options) {
     this.loadInfoList();
+  },
+
+  onShow: function(){
+    var that = this;
+    that.loadInfoList();
   },
 
   loadInfoList: function () {
@@ -24,6 +30,11 @@ Page({
         that.setData({
           infoList: res
         });
+        if (res.length == 0) {
+          that.setData({
+            tip: '暂无数据'
+          })
+        }
         // wx.hideLoading();
       },
       (err) => {
@@ -62,7 +73,7 @@ Page({
   onPullDownRefresh: function() {
     wx.startPullDownRefresh();
     var that = this;
-    var url = app.globalData.hostUrl + '/api/historyMatters';
+    var url = app.globalData.hostUrl + '/api/openMatters';
     app.wxRequest('GET', url, {},
       (res) => {
         that.setData({
@@ -91,6 +102,7 @@ Page({
         }
       }
     )
+    wx.stopPullDownRefresh();
   },
 
   // 详情

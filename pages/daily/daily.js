@@ -8,7 +8,7 @@ Page({
     dailyList: [],
     isLoadingMore: false,
     currentPage: 1,
-    info: ''
+    tip: '',
   },
 
   /**
@@ -30,6 +30,11 @@ Page({
         that.setData({
           dailyList: res
         });
+        if (res.length == 0) {
+          that.setData({
+            tip: '暂无数据'
+          })
+        }
       },
       (err) => {
         if (err.statusCode == '500') {

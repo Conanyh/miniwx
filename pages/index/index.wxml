@@ -44,7 +44,7 @@
     <view class='index-main-item' catchtap='info' hover-class='indextapstyle'>
       <view class='index-main-item-child'>
         <view class='index-main-item-img'>
-          <image src='/images/icon_info.png' class='icon-style'></image>
+          <image src='/images/icon_elegance.png' class='icon-style'></image>
         </view>
       </view>
     </view>
@@ -52,7 +52,7 @@
     <view class='index-main-item' catchtap='elegance' hover-class='indextapstyle'>
       <view class='index-main-item-child'>
         <view class='index-main-item-img'>
-          <image src='/images/icon_elegance.png' class='icon-style'></image>
+          <image src='/images/icon_info.png' class='icon-style'></image>
         </view>
       </view>
     </view>

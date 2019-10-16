@@ -74,3 +74,14 @@
   line-height: 16px;
 }
 
+
+.tip {
+  color: gray;
+  opacity: .8;
+  font-size: 14px;
+  margin-bottom: 20rpx; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
