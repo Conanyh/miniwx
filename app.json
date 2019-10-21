@@ -13,31 +13,31 @@
     "pages/issue/issue",
     "pages/about/about"
   ],
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#cf000d",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/icon_home.png",
+        "selectedIconPath": "/images/icon_home_SLT.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "/images/icon_mine.png",
+        "selectedIconPath": "/images/icon_mine_SLT.png",
+        "text": "我"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "魏家庄街道",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#707070",
-    "selectedColor": "#cf000d",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/ic_main_bar.png",
-        "selectedIconPath": "images/ic_main_bar_selected.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "iconPath": "images/ic_main_person.png",
-        "selectedIconPath": "images/ic_main_person_selected.png",
-        "text": "我"
-      }
-    ]
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,6 +1,5 @@
 const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -24,28 +23,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    if(app.globalData.hostUrl && app.globalData.hostUrl != ''){
+      this.imgUrl();
+    }else{
 
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    this.imgUrl();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.imgUrl();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    
   },
 
   /**
@@ -125,7 +126,6 @@ Page({
         that.setData({
           imgList: res
         });
-        
       },
       (err) => {
         if (err.statusCode == '500') {

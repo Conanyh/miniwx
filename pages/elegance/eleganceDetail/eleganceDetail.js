@@ -26,16 +26,6 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    var token = wx.getStorageSync('token');
-    this.setData({
-      token: token
-    })
-  },
-
-  /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
@@ -81,6 +71,45 @@ Page({
 
   },
 
+  // 详情、评论
+  loadDetailAndComment: function(){
+    var that = this;
+    var url = app.globalData.hostUrl + '/api/newsDetail/'+ news_id;
+    app.wxRequest('GET', url, {},
+      (res) => {
+        that.setData({
+          loadDetailAndComment: res
+        });
+        if (res.length == 0) {
+          that.setData({
+            tip: '暂无数据'
+          })
+        }
+      },
+      (err) => {
+        if (err.statusCode == '500') {
+          wx.request({
+            url: app.globalData.hostUrl + '/api/authorizations/current',
+            method: "PUT",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded',
+              'Authorization': 'Bearer ' + wx.getStorageSync('token')
+            },
+            success: function (res) {
+              wx.setStorageSync('token', res.data.access_token);
+              app.wxRequest('GET', url, {},
+                (res) => {
+
+                }
+              );
+            }
+          })
+        }
+      }
+    )
+  },
+
+  // 登录
   bindGetUserInfo: function (res) {
     let info = res;
     if (info.detail.userInfo) {
@@ -172,19 +201,22 @@ Page({
     }
   },
 
+  // 评论
   sendSubmit:function (e) {
     var that = this;
-    var comment = e.detail.value.comment;
+    var news_id = e.datail.value.news_id;
+    var content = e.detail.value.comment;
     console.log(comment)
     wx.request({
-      url: '',
+      url: app.globalData.hostUrl + '/api/newsComment',
       method: 'POST',
       header: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + wx.getStorageSync('token'),
       },
       formData: {
-        'comment': comment
+        'news_id': news_id,
+        'content': content,
       },
       success: function (res) {
         if (res.statusCode == 200) {

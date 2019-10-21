@@ -1,4 +1,3 @@
-<!--pages/mine/mine.wxml-->
 <view class="container">
   <view class='line'></view>
   <!-- 用户部分 -->

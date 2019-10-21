@@ -5,11 +5,11 @@
       <view class="title">
         <text class="title_left">title</text>
       </view>
-      <view class="content-img">
+      <!-- <view class="content-img">
         <image src="" />
         <image src="" />
         <image src="" />
-      </view>
+      </view> -->
       <view class="content-area">
         <text class="card-content">content content content content contentcontent contentcontentcontentcontent</text>
       </view>
@@ -78,6 +78,7 @@
     <view wx:else>
       <form bindsubmit="sendSubmit">
         <view class="release" hidden="{{!releaseFocus}}">
+          <input name="news_id" value="" hidden="true" />
           <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" name="comment" placeholder="评论 {{releaseName}}"></textarea>
           <button formType="submit" class="submit">评论</button>
         </view>

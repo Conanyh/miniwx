@@ -86,20 +86,16 @@ Page({
                   wx.setStorageSync('token', res.data.access_token);
                   // token时间， 默认是3600s
                   wx.setStorageSync('tokenTime', res.data.expires_in);
-                  // wx.switchTab({
-                  //   url: '/pages/mine/mine',
-                  // })
                   wx.request({
-                    url: 'https://www.zhuzones.top/api/weappUser',
+                    url: app.globalData.hostUrl + '/api/weappUser',
                     method: 'GET',
                     success: function (res) {
-                      console.log(res.data)
-                      console.log(res.data.integral)
                       // 缓存用户所有信息
                       wx.setStorageSync('nickName', res.data.nickname);
                       wx.setStorageSync('avatarUrl', res.data.avatarurl);
                       wx.setStorageSync('integral', res.data.integral);
-                      wx.switchTab({
+                      console.log(res.data);
+                      wx.navigateTo({
                         url: '/pages/index/index',
                       })
                     },
@@ -107,6 +103,9 @@ Page({
                       'content-type': 'application/x-www-form-urlencoded',
                       'Authorization': 'Bearer ' + wx.getStorageSync('token')
                     }
+                  });
+                  wx.navigateBack({
+                    delete: 1
                   })
                 } else {
                   wx.showModal({
