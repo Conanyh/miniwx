@@ -3,7 +3,7 @@
   <view class="cards-area">
     <view class="card">
       <view class="title">
-        <text class="title_left">title</text>
+        <text class="title_left">{{loadDetailAndComment.header}}</text>
       </view>
       <!-- <view class="content-img">
         <image src="" />
@@ -11,57 +11,38 @@
         <image src="" />
       </view> -->
       <view class="content-area">
-        <text class="card-content">content content content content contentcontent contentcontentcontentcontent</text>
+        <text class="card-content">{{loadDetailAndComment.sentence}}</text>
       </view>
       <view class="info-area">
         <image src="/images/address.png"></image>
-        <text class="address">江苏省苏州市工业园区</text>
+        <text class="address">{{loadDetailAndComment.created_at}}</text>
       </view>
     </view>
     <view class="comment">
       <view class="title">
         <text>评论</text>
       </view>
-      <view class="content">
 
-        <view class="userinfo">
-          <view class="userinfo-content">
-            <view class="userinfo-photo">
-              <image bindtap="bindViewTap" class="userinfo-avatar" src="/images/jifen.png" mode="cover"></image>
-            </view>
-            <view class="username">
-              <text class="user">name</text>
-              <text class="shijian">2019</text>
-            </view>
-          </view>
-        </view>
-
-        <view class="content-info">
-          <text>文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字</text>
-        </view>
-
-
-      </view>
-      <view class="content">
-
-        <view class="userinfo">
-          <view class="userinfo-content">
-            <view class="userinfo-photo">
-              <image bindtap="bindViewTap" class="userinfo-avatar" src="/images/jifen.png" mode="cover"></image>
-            </view>
-            <view class="username">
-              <text class="user">name</text>
-              <text class="shijian">2019</text>
+      <block wx:for="{{loadDetailAndComment.comments}}" wx:key="id">
+        <view class="content">
+          <view class="userinfo">
+            <view class="userinfo-content">
+              <view class="userinfo-photo">
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{loadDetailAndComment.comments.avatarurl}}" mode="cover"></image>
+              </view>
+              <view class="username">
+                <text class="user">{{loadDetailAndComment.comments.nickname}}</text>
+                <text class="shijian">{{loadDetailAndComment.comments.created_at}}</text>
+              </view>
             </view>
           </view>
+          <view class="content-info">
+            <text>{{loadDetailAndComment.comments.content}}</text>
+          </view>
         </view>
-
-        <view class="content-info">
-          <text>文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字评论文字评论文字文字</text>
-        </view>
+      </block>
 
 
-      </view>
     </view>
 
 
@@ -78,9 +59,9 @@
     <view wx:else>
       <form bindsubmit="sendSubmit">
         <view class="release" hidden="{{!releaseFocus}}">
-          <input name="news_id" value="" hidden="true" />
+          <input name="news_id" value="{{loadDetailAndComment.id}}" style="display:none" />
           <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" name="comment" placeholder="评论 {{releaseName}}"></textarea>
-          <button formType="submit" class="submit">评论</button>
+          <button form-type="submit" class="submit">评论</button>
         </view>
       </form>
     </view>

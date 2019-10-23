@@ -6,22 +6,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    releaseFocus: true,
-  },
-  bindReply: function (e) {
-    this.setData({
-      releaseFocus: true
-    })
+    eleganceList: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var token = wx.getStorageSync('token');
-    this.setData({
-      token: token
-    })
+    var id = options.id
+    if(id){
+      wx.request({
+        url: app.globalData.hostUrl + '/api/newsDetail/' + id,
+        method: 'get',
+        header: {
+          'Content-type': 'application/json',
+          'Authorization': 'Bearer ' + wx.getStorageSync('token'),
+        },
+        success: function (res) {
+          that.setData({
+            loadDetailAndComment: res.data
+          });
+          if (res.length == 0) {
+            that.setData({
+              tip: '暂无数据'
+            })
+          }
+        }
+      })
+    }
     
   },
 
@@ -29,84 +41,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var token = wx.getStorageSync('token');
-    this.setData({
-      token: token
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    // wx.startPullDownRefresh()
-    // wx.stopPullDownRefresh()
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
-  // 详情、评论
-  loadDetailAndComment: function(){
-    var that = this;
-    var url = app.globalData.hostUrl + '/api/newsDetail/'+ news_id;
-    app.wxRequest('GET', url, {},
-      (res) => {
-        that.setData({
-          loadDetailAndComment: res
-        });
-        if (res.length == 0) {
-          that.setData({
-            tip: '暂无数据'
-          })
-        }
-      },
-      (err) => {
-        if (err.statusCode == '500') {
-          wx.request({
-            url: app.globalData.hostUrl + '/api/authorizations/current',
-            method: "PUT",
-            header: {
-              'content-type': 'application/x-www-form-urlencoded',
-              'Authorization': 'Bearer ' + wx.getStorageSync('token')
-            },
-            success: function (res) {
-              wx.setStorageSync('token', res.data.access_token);
-              app.wxRequest('GET', url, {},
-                (res) => {
-
-                }
-              );
-            }
-          })
-        }
-      }
-    )
+    
   },
 
   // 登录

@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    eleganceList: [],
+    eleganceList: {},
     currentPage: 1,
     tip: '',
   },
@@ -81,10 +81,10 @@ Page({
 
   },
   // 详情
-  eleganceDetail: function (e) {
-    wx.navigateTo({
-      url: '/pages/elegance/eleganceDetail/eleganceDetail?id=' + e.currentTarget.dataset.id,
-    })
-  }
+  // eleganceDetail: function (e) {
+  //   wx.navigateTo({
+  //     url: '/pages/elegance/eleganceDetail/eleganceDetail?id=' + e.currentTarget.dataset.id,
+  //   })
+  // }
 
 })
