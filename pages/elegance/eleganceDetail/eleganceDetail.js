@@ -180,9 +180,6 @@ Page({
           let pages = getCurrentPages();
           console.log(pages)
           let curPage = pages[pages.length - 1];
-          // wx.navigateBack({
-          //   delete: 1,
-          // })
           wx.redirectTo({
             url: '/pages/elegance/eleganceDetail/eleganceDetail?id=' + curPage.options.id,
           })

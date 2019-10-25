@@ -36,6 +36,7 @@ Page({
             tip: '暂无数据'
           })
         }
+        wx.stopPullDownRefresh();
       },
       (err) => {
         if (err.statusCode == '500') {
@@ -71,7 +72,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.loadEleganceList();
   },
 
   /**

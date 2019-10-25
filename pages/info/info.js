@@ -35,7 +35,7 @@ Page({
             tip: '暂无数据'
           })
         }
-        // wx.hideLoading();
+        wx.stopPullDownRefresh();
       },
       (err) => {
         if (err.statusCode == '500') {
@@ -71,37 +71,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    wx.startPullDownRefresh();
-    var that = this;
-    var url = app.globalData.hostUrl + '/api/openMatters';
-    app.wxRequest('GET', url, {},
-      (res) => {
-        that.setData({
-          infoList: res
-        });
-        wx.stopPullDownRefresh();
-      },
-      (err) => {
-        if (err.statusCode == '500') {
-          wx.request({
-            url: app.globalData.hostUrl + '/api/authorizations/current',
-            method: "PUT",
-            header: {
-              'content-type': 'application/x-www-form-urlencoded',
-              'Authorization': 'Bearer ' + wx.getStorageSync('token')
-            },
-            success: function (res) {
-              wx.setStorageSync('token', res.data.access_token);
-              app.wxRequest('GET', url, {},
-                (res) => {
-
-                }
-              );
-            }
-          })
-        }
-      }
-    )
+    this.loadInfoList();
     wx.stopPullDownRefresh();
   },
 

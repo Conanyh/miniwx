@@ -67,12 +67,16 @@ Page({
   takePhoto(e) {
     var that = this;
     wx.chooseImage({
-      count: 3,
+      count: 1,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: function(res) {
         var tempFilePaths = res.tempFilePaths;
         console.log(tempFilePaths);
+        wx.compressImage({
+          src: tempFilePaths[0],
+          quality: 50
+        })
         that.setData({
           src: tempFilePaths,
         })
