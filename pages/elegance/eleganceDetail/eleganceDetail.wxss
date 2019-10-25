@@ -34,6 +34,7 @@
   margin-bottom: 0rpx;
   overflow: hidden;
   color: #333;
+  word-wrap: break-word;
 }
 
 .card .title {
@@ -57,6 +58,10 @@
 .card .content-area {
   display: -webkit-box;
   margin: 3px 0px 7px 0px;
+}
+
+.content-area .card-content {
+  word-wrap: break-word;
 }
 
 .card .content-img {
@@ -152,58 +157,71 @@
   margin: 0 20rpx 0 10rpx;
 }
 
+/* 用户部分 */
 
-  /* 用户部分 */
-.userinfo{
-  width:100vw;
+.userinfo {
+  width: 100vw;
   height: 32px;
   display: flex;
   background: #fff;
   align-items: center;
   margin-top: 10rpx;
 }
+
 /* 用户头像信息 */
-.userinfo-content{
-  width:50%;
+
+.userinfo-content {
+  width: 50%;
   height: 100%;
-  margin-left:5vw;
+  margin-left: 5vw;
   display: flex;
   align-items: center;
 }
+
 /* 用户名 */
-.user{
-  font-size:25rpx;
-  display: block
+
+.user {
+  font-size: 25rpx;
+  display: block;
 }
-.shijian{
-  font-size:25rpx;
-  display: block
+
+.shijian {
+  font-size: 25rpx;
+  display: block;
 }
 
 /* 用户头像 */
-.userinfo-photo{
-  width:30px;
-  height:30px;
-  border-radius:50%; 
+
+.userinfo-photo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   margin-right: 20px;
   background: rgb(248, 247, 247);
 }
+
 /* 用户头像大小 */
-.userinfo-photo image{
-  width:100%;
-  height:100%;
-  border-radius:50%; 
+
+.userinfo-photo image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
-.content{
+
+.content {
   margin-bottom: 35rpx;
 }
-.content-info{
+.content:active{
+  background-color: #eee;
+}
+
+.content-info {
   font-size: 30rpx;
   margin-top: 7rpx;
   padding: 0 0 0 80rpx;
+  word-wrap: break-word;
 }
+
 .content-info text {
   font-size: 28rpx;
 }
-
-

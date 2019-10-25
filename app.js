@@ -1,6 +1,6 @@
 const APP_ID = 'wx6134b2f34c689b61';
 const APP_SECRET = 'a4d1e26269e707161a953abc270d2162';
-var HOST_URL = 'https://www.zhuzones.top';
+var HOST_URL = 'https://www.vorin.net';
 
 App({
   onLaunch: function () {

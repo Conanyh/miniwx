@@ -6,21 +6,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    eleganceList: {},
+    releaseFocus: true,
+    loadDetailAndComment: [],
+    content:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var id = options.id
+    var that = this;
+    var id = options.id;
+    var token = wx.getStorageSync('token');
+    var nickname = wx.getStorageSync('nickName')
+    console.log(nickname)
+    that.setData({
+      token: token,
+      nickname: nickname
+    });
     if(id){
       wx.request({
         url: app.globalData.hostUrl + '/api/newsDetail/' + id,
         method: 'get',
         header: {
           'Content-type': 'application/json',
-          'Authorization': 'Bearer ' + wx.getStorageSync('token'),
+          'Authorization': 'Bearer ' + token,
         },
         success: function (res) {
           that.setData({
@@ -40,7 +50,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function (options) {
     
   },
 
@@ -87,7 +97,7 @@ Page({
                   //   url: '/pages/mine/mine',
                   // })
                   wx.request({
-                    url: 'https://www.zhuzones.top/api/weappUser',
+                    url: app.globalData.hostUrl + '/api/weappUser',
                     method: 'GET',
                     success: function (res) {
                       // 缓存用户所有信息
@@ -139,50 +149,88 @@ Page({
   // 评论
   sendSubmit:function (e) {
     var that = this;
-    var news_id = e.datail.value.news_id;
-    var content = e.detail.value.comment;
-    console.log(comment)
-    wx.request({
-      url: app.globalData.hostUrl + '/api/newsComment',
-      method: 'POST',
-      header: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + wx.getStorageSync('token'),
-      },
-      formData: {
-        'news_id': news_id,
-        'content': content,
-      },
-      success: function (res) {
-        if (res.statusCode == 200) {
+    var news_id = e.detail.value.news_id;
+    var content = e.detail.value.content;
+    if (content.length == 0) {
+      wx.showToast({
+        title: '请输入评论',
+        icon: 'none',
+        duration: 2000
+      });
+    }else{
+      console.log(e);
+      wx.request({
+        url: app.globalData.hostUrl + '/api/newsComment',
+        method: 'POST',
+        header: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + wx.getStorageSync('token'),
+        },
+        data: {
+          'news_id': news_id,
+          'content': content,
+        },
+        success: function (res) {
           wx.showToast({
             title: '成功',
             duration: 2000,
             mask: true,
             icon: 'success',
-            success(res) {
-              const pages = getCurrentPages();
-              const perpage = pages[pages.length - 1];
-              perpage.onLoad();
+          })
+          let pages = getCurrentPages();
+          console.log(pages)
+          let curPage = pages[pages.length - 1];
+          // wx.navigateBack({
+          //   delete: 1,
+          // })
+          wx.redirectTo({
+            url: '/pages/elegance/eleganceDetail/eleganceDetail?id=' + curPage.options.id,
+          })
+        }
+      })
+    }
+    
+  },
+
+  // 长按删除
+  deleteComment: function(e){
+    var that = this;
+    var id = e.currentTarget.dataset.id;
+    wx.showModal({
+      title: '提示',
+      content: '确定删除吗？',
+      success: function(res){
+        if(res.confirm){
+          wx.request({
+            url: app.globalData.hostUrl + '/api/destroyComment',
+            method: 'POST',
+            header: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + wx.getStorageSync('token'),
+            },
+            data: {
+              'id': id,
+            },
+            success: function (res) {
+              wx.showToast({
+                title: '删除成功',
+                duration: 5000,
+                mask: true,
+                icon: 'success',
+              })
+              let pages = getCurrentPages();
+              let curPage = pages[pages.length - 1];
+              wx.redirectTo({
+                url: '/pages/elegance/eleganceDetail/eleganceDetail?id=' + curPage.options.id,
+              })
             }
           })
-        } else {
-          wx.showToast({
-            title: '服务器繁忙',
-            duration: 2000,
-            mask: true,
-            icon: 'loading',
-            success(res) {
-              const pages = getCurrentPages();
-              const perpage = pages[pages.length - 1];
-              perpage.onLoad();
-            }
-          })
+        }else if(res.cancel){
+          console.log('取消')
         }
       }
     })
   }
-
   
 
 })

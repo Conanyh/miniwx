@@ -24,20 +24,42 @@
       </view>
 
       <block wx:for="{{loadDetailAndComment.comments}}" wx:key="id">
-        <view class="content">
-          <view class="userinfo">
-            <view class="userinfo-content">
-              <view class="userinfo-photo">
-                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{loadDetailAndComment.comments.avatarurl}}" mode="cover"></image>
+        <view data-id="{{item.id}}" wx:if="{{item.id}}">
+          <view wx:if="{{nickname == item.nickname}}">
+            <view class="content" bindlongtap="deleteComment" data-id="{{item.id}}">
+              <view class="userinfo">
+                <view class="userinfo-content">
+                  <view class="userinfo-photo">
+                    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{item.avatarurl}}" mode="cover"></image>
+                  </view>
+                  <view class="username">
+                    <text class="user">{{item.nickname}}</text>
+                    <text class="shijian">{{item.created_at}}</text>
+                  </view>
+                </view>
               </view>
-              <view class="username">
-                <text class="user">{{loadDetailAndComment.comments.nickname}}</text>
-                <text class="shijian">{{loadDetailAndComment.comments.created_at}}</text>
+              <view class="content-info">
+                <text>{{item.content}}</text>
               </view>
             </view>
           </view>
-          <view class="content-info">
-            <text>{{loadDetailAndComment.comments.content}}</text>
+          <view wx:else>
+            <view class="content" data-id="{{item.id}}">
+              <view class="userinfo">
+                <view class="userinfo-content">
+                  <view class="userinfo-photo">
+                    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{item.avatarurl}}" mode="cover"></image>
+                  </view>
+                  <view class="username">
+                    <text class="user">{{item.nickname}}</text>
+                    <text class="shijian">{{item.created_at}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="content-info">
+                <text>{{item.content}}</text>
+              </view>
+            </view>
           </view>
         </view>
       </block>
@@ -45,13 +67,10 @@
 
     </view>
 
-
-
-    <!-- <view class="talk" bindtap="bindReply">回复</view> -->
     <view wx:if="{{!token}}">
       <form>
         <view class="release" hidden="{{!releaseFocus}}">
-          <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" name="comment" placeholder="请先登录" disabled="true"></textarea>
+          <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" name="content" placeholder="请先登录" disabled="true"></textarea>
           <button formType="submit" class="submit" wx:if="{{!token}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">登录</button>
         </view>
       </form>
@@ -60,7 +79,7 @@
       <form bindsubmit="sendSubmit">
         <view class="release" hidden="{{!releaseFocus}}">
           <input name="news_id" value="{{loadDetailAndComment.id}}" style="display:none" />
-          <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" name="comment" placeholder="评论 {{releaseName}}"></textarea>
+          <textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" name="content" placeholder="评论 {{releaseName}}"></textarea>
           <button form-type="submit" class="submit">评论</button>
         </view>
       </form>

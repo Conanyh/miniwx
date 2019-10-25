@@ -10,11 +10,11 @@
             <text class="title">#{{item.title}}# </text> <text class="card-content">{{item.content}}</text>
           </view>
           <view class="content-img">
-            <image src="https://www.zhuzones.top{{item.image}}" />
+            <image src="https://www.vorin.net{{item.image}}" />
           </view>
           <view class="info-area">
             <image src="/images/address.png"></image>
-            <text class="address">{{item.address}}</text>
+            <text class="address">{{item.time_limit}}</text>
           </view>
         </view>
       </view>

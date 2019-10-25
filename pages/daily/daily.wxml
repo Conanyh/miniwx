@@ -17,7 +17,7 @@
               </view>
             </view>
             <view class="right-area">
-              <image class="img" src="https://www.zhuzones.top/{{item.image}}" />
+              <image class="img" src="https://www.vorin.net/{{item.image}}" />
             </view>
           </view>
         </view>
