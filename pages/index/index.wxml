@@ -1,6 +1,7 @@
 <view class='indexContainer'>
   <view class="page-body">
-    <view class="page-section page-section-spacing swiper">
+    <!-- <view class="page-section page-section-spacing swiper"> -->
+    <view class="page-section swiper">
       <swiper
         indicator-dots="{{indicatorDots}}" indicator-active-color="{{indicatorActiveColor}}"  autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
         interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">

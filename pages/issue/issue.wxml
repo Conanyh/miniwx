@@ -37,16 +37,39 @@
       </view>
     </view>
 
-    <view>
+    <!-- <view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell">
           <view class="weui-cell__bd" style="height:160px;">
             <view wx:if="{{src}}">
-              <image src="{{src}}" style="height:180px" name="image"></image>
+              <image src="{{src[0]}}" style="height:180px" name="image"></image>
             </view>
             <view wx:else>
               <view class="weui-uploader__input-box" style="margin-left: 130px;margin-top: 40px;">
                 <view class="weui-uploader__input" bindtap="takePhoto"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+    <view>
+      <view class="weui-cells">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <view class="weui-uploader">
+              <view class="weui-uploader__bd">
+                <view class="weui-uploader__files" id="uploaderFiles">
+                  <block wx:for="{{files}}" wx:key="*this">
+                    <view class="weui-uploader__file" bindtap="previewImage" bindlongpress="deleteImage" id="{{item}}" data-index="{{index}}">
+                      <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                    </view>
+                  </block>
+                </view>
+                <view wx:if="{{files.length < 6}}" class="weui-uploader__input-box">
+                  <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                </view>
               </view>
             </view>
           </view>

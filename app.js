@@ -1,5 +1,5 @@
-const APP_ID = 'wx6134b2f34c689b61';
-const APP_SECRET = 'a4d1e26269e707161a953abc270d2162';
+const APP_ID = 'wxc1f5dea48d6161f5';
+const APP_SECRET = '1ee17a29063b32d3e3c483e782dcd45c';
 var HOST_URL = 'https://www.vorin.net';
 
 App({

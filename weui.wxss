@@ -460,8 +460,8 @@ icon {
 
 .weui-uploader__img {
   display: block;
-  width: 79px;
-  height: 79px;
+  width: 96px;
+  height: 96px;
 }
 
 .weui-uploader__file_status {
