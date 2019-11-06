@@ -27,6 +27,7 @@ Page({
     var url = app.globalData.hostUrl + '/api/historyMatters';
     app.wxRequest('GET', url, {},
       (res) => {
+        console.log(res)
         that.setData({
           dailyList: res
         });
@@ -68,7 +69,11 @@ Page({
     wx.stopPullDownRefresh();
   },
 
-
-
+  // 详情
+  dailyDetail: function (e) {
+    wx.navigateTo({
+      url: '/pages/daily/dailyDetail/dailyDetail?id=' + e.currentTarget.dataset.id,
+    })
+  }
 
 })

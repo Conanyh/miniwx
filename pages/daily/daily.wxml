@@ -2,11 +2,11 @@
 <view class="container">
   <view class="cards-area">
     <view wx:for="{{dailyList}}" wx:key="id">
-      <view wx:if="{{item.id}}">
+      <view data-id="{{item.id}}" bindtap="dailyDetail" wx:if="{{item.id}}">
         <view class="card">
           <view class="title">
             <text class="title_left">{{item.title}}</text>
-            <text class="title_right">{{item.status == 0?'正在处理':'已完成'}}</text>
+            <text class="title_right">{{item.status == 0?'待处理':'已处理'}}</text>
           </view>
           <view class="content-area">
             <view class="left-area">

@@ -1,0 +1,36 @@
+<!--pages/daily/dailyDetail/dailyDetail.wxml-->
+<view class="container">
+  <view class="cards-area">
+    <view class="card">
+      <view class="title">
+        <text class="title_left">{{dailyDetail.title}}</text>
+      </view>
+      <view class="content-area">
+        <text class="card-content">{{dailyDetail.content}}</text>
+      </view>
+      <view class="content-img">
+        <image src="https://www.vorin.net/{{dailyDetail.image}}" />
+      </view>
+      <view class="info-area">
+        <text class="posted-date">{{dailyDetail.created_at}}</text>   
+        <text class="views">{{dailyDetail.address}}</text>
+      </view>
+    </view>
+    <view class="card" wx:if="{{dailyDetail.see_image}}">
+      <view class="title">
+        <text class="title_left">处理人：{{dailyDetail.userName}}</text>
+      </view>
+      <view class="content-area" wx:if="{{dailyDetail.information}}">
+        <text class="card-content">说明：{{dailyDetail.information}}</text>
+      </view>
+      <view class="content-img">
+        <image src="https://www.vorin.net/{{dailyDetail.see_image}}" />
+      </view>
+      <view class="info-area">
+        <text class="posted-date" wx:if="{{dailyDetail.process == 0}}">待处理</text>
+        <text class="posted-date" wx:elif="{{dailyDetail.process == 3}}">处理中</text>
+        <text class="posted-date" wx:else>已完成</text>
+      </view>
+    </view>
+  </view>
+</view>

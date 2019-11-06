@@ -43,9 +43,9 @@
 .divLine{
  background: white;
  width: 100%;
- height: 5rpx;
+ /* height: 5rpx;
  margin-top:20rpx;
- margin-bottom: 20rpx; 
+ margin-bottom: 20rpx;  */
 }
 
 .list-msg .list-msg2 {

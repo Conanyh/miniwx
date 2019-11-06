@@ -6,6 +6,7 @@
     "pages/info/info",
     "pages/info/detail/detail",
     "pages/daily/daily",
+    "pages/daily/dailyDetail/dailyDetail",
     "pages/wxlogin/wxlogin",
     "pages/mine/mine",
     "pages/service/service",
